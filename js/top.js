@@ -1,0 +1,134 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.querySelector('.saikun-menu');
+    const closeBtn = document.querySelector('.menu-close');
+    const slideMenu = document.querySelector('.open-menu');
+
+    if (openBtn && slideMenu) {
+        openBtn.addEventListener('click', () => {
+            slideMenu.classList.add('is-open');
+        });
+    }
+
+    if (closeBtn && slideMenu) {
+        closeBtn.addEventListener('click', () => {
+            slideMenu.classList.remove('is-open');
+        });
+    }
+});
+
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading');
+    const centerImg = document.querySelector('.top-center');
+    const sideImgs = document.querySelectorAll('.top-right, .top-left');
+    const bottomRightLogo = document.querySelector('.hero-logo');
+    const allImgs = document.querySelectorAll('.top-left, .top-center, .top-right');
+
+    if (loadingScreen) {
+        loadingScreen.classList.add('loaded'); 
+    }
+
+    setTimeout(() => {
+        allImgs.forEach(img => {
+            img.classList.add('is-show'); 
+        });
+
+        const totalEntryTime = 1800; 
+
+        setTimeout(() => {
+            if (centerImg) {
+                // 🌟 【今回追加した部分】🌟
+                // 登場が終わったら、CSSの「1秒遅れてフワッと動く」設定を解除する！
+                // これでスクロールに遅れずにピタッと吸い付くようになります。
+                allImgs.forEach(img => {
+                    img.style.transition = 'none';
+                });
+
+                initializeScrollAnimation(centerImg, sideImgs, bottomRightLogo);
+            }
+        }, totalEntryTime);
+
+    }, 200); 
+
+    function initializeScrollAnimation(centerImg, sideImgs, bottomRightLogo) {
+        const lerp = (start, end, progress) => {
+            return start + (end - start) * progress;
+        };
+
+        const animateOnScroll = () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            const totalScroll = window.innerHeight * 2; 
+
+            let progress = scrollY / totalScroll;
+            if (progress < 0) progress = 0;
+            if (progress > 1) progress = 1;
+
+            const startSize = Math.min(window.innerWidth * 0.50, 700);
+            const endWidth = document.documentElement.clientWidth;
+            const endHeight = window.innerHeight;
+
+            const currentWidth = startSize + (endWidth - startSize) * progress;
+            const currentHeight = startSize + (endHeight - startSize) * progress;
+
+            centerImg.style.width = `${currentWidth}px`;
+            centerImg.style.height = `${currentHeight}px`;
+            centerImg.style.maxWidth = 'none'; 
+            centerImg.style.maxHeight = 'none';
+            centerImg.style.flexShrink = '0'; 
+
+            const yOffset = -100 * (1 - progress);
+            centerImg.style.transform = `translateY(${yOffset}px)`;
+
+            let clipProgress = progress * 1.5; 
+            if (clipProgress > 1) clipProgress = 1;
+
+            const startPath = [
+                { x: 29.29, y: 0 }, { x: 70.71, y: 0 }, { x: 100, y: 29.29 }, { x: 100, y: 70.71 },
+                { x: 70.71, y: 100 }, { x: 29.29, y: 100 }, { x: 0, y: 70.71 }, { x: 0, y: 29.29 }
+            ];
+
+            const endPath = [
+                { x: 0, y: 0 }, { x: 100, y: 0 }, { x: 100, y: 0 }, { x: 100, y: 100 },
+                { x: 100, y: 100 }, { x: 0, y: 100 }, { x: 0, y: 100 }, { x: 0, y: 0 }
+            ];
+
+            const currentPath = startPath.map((startPt, index) => {
+                const endPt = endPath[index];
+                const x = startPt.x + (endPt.x - startPt.x) * clipProgress;
+                const y = startPt.y + (endPt.y - startPt.y) * clipProgress;
+                return `${x.toFixed(2)}% ${y.toFixed(2)}%`;
+            }).join(', ');
+
+            centerImg.style.webkitClipPath = `polygon(${currentPath})`;
+            centerImg.style.clipPath = `polygon(${currentPath})`;
+
+            let sideOpacity = 1 - (progress * 3);
+            if (sideOpacity < 0) sideOpacity = 0;
+            sideImgs.forEach(img => {
+                img.style.opacity = sideOpacity;
+                img.style.transform = `translateY(${yOffset}px)`;
+            });
+
+            if (bottomRightLogo) {
+                const maxAlpha = 0.4;
+                const currentAlpha = maxAlpha * progress;
+                bottomRightLogo.style.backgroundColor = `rgba(255, 252, 252, ${currentAlpha})`;
+
+                if (progress === 1) {
+                    bottomRightLogo.classList.add('is-visible');
+                } else {
+                    bottomRightLogo.classList.remove('is-visible');
+                }
+            }
+        };
+
+        animateOnScroll(); 
+
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(animateOnScroll);
+        });
+
+        window.addEventListener('resize', () => {
+            requestAnimationFrame(animateOnScroll);
+        });
+    }
+});
