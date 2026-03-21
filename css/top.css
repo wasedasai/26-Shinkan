@@ -6,22 +6,30 @@ body {
     scroll-behavior: smooth;
     overflow-x: clip;
 }
-#loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: #FFFCFC;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: opacity 0.5s ease, visibility 0.5 ease;
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FDEAE9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, background-color 1s ease;
 }
-#loading.loaded {
-    opacity: 0;
-    visibility: hidden;
+#logo1, #logo2 {
+  position: absolute;
+}
+#logo1 {
+  opacity: 0.1; /* 【重要】最初は透明度を0.1にしてかなり薄くしておきます */
+  transition: opacity 0.2s linear; /* JavaScriptでの変更を少し滑らかにする */
+}
+#logo2 {
+  opacity: 0;
+  visibility: hidden; 
+  transition: opacity 1s ease, visibility 1s ease; /* 1秒かけてフワッと出す */
 }
 .spinner {
   width: 50px;
@@ -79,8 +87,8 @@ header {
     right: 40px;
     z-index: 999;
 }
-.saikun-menu img {
-    width: 48px;
+.saikun-menu svg {
+    width: 37px;
     height: auto;
 }
 .menu-text {
@@ -181,6 +189,11 @@ header {
 }
 .scroll-container {
     height: 300vh;
+    background-image: 
+        linear-gradient(rgba(255, 252, 252, 0.35), rgba(255, 252, 252, 0.35)), 
+        url("../images/top-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .stick-area {
     position: sticky;
@@ -195,23 +208,6 @@ header {
 .octagon {
     object-fit: cover;
 }
-.top-left, 
-.top-right {
-    width: 20vw;
-    height: 20vw;
-    max-width: 300px;
-    max-height: 300px;
-    clip-path: polygon(29.29% 0%, 70.71% 0%, 100% 29.29%, 100% 70.71%, 70.71% 100%, 29.29% 100%, 0% 70.71%, 0% 29.29%);
-}
-.top-left {
-    margin-top: 200px;
-    margin-left: -2.5vw;
-    margin-right: 2.5vw;
-}
-.top-right {
-    margin-top: 400px;
-    margin-left: -1.7vw;
-}
 .top-center {
     width: 50vw;
     height: 50vw;
@@ -221,6 +217,7 @@ header {
     will-change: transform, clip-path;
     clip-path: polygon(29.29% 0%, 70.71% 0%, 100% 29.29%, 100% 70.71%, 70.71% 100%, 29.29% 100%, 0% 70.71%, 0% 29.29%);
     z-index: 5;
+    object-position: 15% 50%;
 }
 .hero-logo {
     position: absolute;
@@ -317,21 +314,24 @@ h1 {
 }
 .overview-box-top {
     position: absolute;
-    top: 14%;
-    right: -6%;
+    top: 30%;
+    right: 15%;
+    transform: translate(50%,-50%);
 }
 .overview-box-center {
     position: absolute;
-    top: 2%;
-    left: 20%;
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%,-50%);
 }
 .overview-box-bottom {
     position: absolute;
-    top: 33%;
-    right: -4%;
+    top: 70%;
+    right: 40%;
+    transform: translate(50%,-50%);
 }
 .space {
-    margin-top: 10vh;
+    margin-top: 20%;
     margin-bottom: 20px;
 }
 .overview-right h1 {
@@ -641,6 +641,10 @@ h1 {
     box-sizing: border-box;
     transition: opacity 0.4s ease;
 }
+.pos-3 .faq-front,
+.pos-3 .faq-back {
+    padding: 8% 15% 15% 15%;
+}
 .faq-back {
     opacity: 0;
 }
@@ -671,40 +675,40 @@ h1 {
 .pos-1 {
     position: absolute;
     width: 25.4%;
-    left: -3%;
-    bottom: 30%;
+    left: 15%;
+    bottom: 48%;
     aspect-ratio: 3 / 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    transform: translate(-50%,50%);
 }
 .pos-2 {
     width: 41.5%;
-    left: 10%;
-    top: 0;
+    left: 32%;
+    top: 23%;
+    transform: translate(-50%,-50%);
 }
 .pos-3 {
     width: 39.1%;
-    left: 15%;
-    bottom: 0;
+    left: 37%;
+    bottom: 30%;
+    transform: translate(-50%,50%);
 }
 .pos-4 {
     width: 47.8%;
-    right: 12%;
-    top: 18%;
+    right: 37%;
+    top: 45%;
+    transform: translate(50%,-50%);
 }
 .pos-5 {
     position: absolute;
     width: 31.5%;
-    right: -3%;
-    bottom: 10%;
+    right: 17%;
+    bottom: 25%;
     aspect-ratio: 3 / 2;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transform: translate(50%,50%);
 }
 .faq-area {
     color: #FFFCFC;
@@ -721,6 +725,10 @@ h1 {
     font-size: 26px;
     font-weight: bold;
     margin-left: 30px;
+}
+.faq-text a {
+    text-decoration: none;
+    color: #A93B3E;
 }
 .pos-5 p {
     font-size: 24px;
@@ -802,10 +810,6 @@ footer {
 .footer-sns a:hover {
     background-color: #1C1B1B;
 }
-.footer-sns img {
-    width: 24px;
-    height: auto;
-}
 .footer-nav {
     display: flex;
     justify-content: space-between;
@@ -852,17 +856,24 @@ footer {
         padding: 0 10px;
         overflow: hidden; /* 万が一中身が大きくても外にはみ出させない */
     }
+    #loading-screen svg {
+        height: 93px;
+    }
     .header-logo img {
         height: 90px; 
         margin: 0 0 0 -5px;
     }
+    .logo-sp svg {
+        height: 55px;
+        width: auto;
+    }
     .sai-menu {
         position: fixed;
-        right: 5px; 
+        right: 15px; 
         margin-right: 0;
     }
-    .saikun-menu img {
-        width: 30px;
+    .saikun-menu svg {
+        width: 38px;
         height: auto;
     }
     .open-menu {
@@ -876,31 +887,32 @@ footer {
     .line {
         margin: 14px auto;
     }
-    .menu-text p {
-        font-size: 10px;
+    .menu-text {
+        font-size: 14px;
     }
     .menu-texts p {
         font-size: 16px;
+        padding: 10px 0;
     }
     .open-menu-container .flex {
     flex-direction: column;
     }
     .menu-right {
-        gap: 15px;
+        gap: 25px;
         margin-top: 9px;
     }
     .menu-right a {
+        height: 35px;
+        width: 35px;
+    }
+    .sai-insta svg {
+        height: 30px;
+    }
+    .sai-twitter svg {
+        height: 28px;
+    }
+    .sai-youtube svg {
         height: 25px;
-        width: 25px;
-    }
-    .insta {
-        height: 18px;
-    }
-    .twitter {
-        height: 13px;
-    }
-    .youtube {
-        height: 13px;
     }
     .scroll-container {
         height: 300vh;
@@ -972,18 +984,21 @@ footer {
         left: auto;
         top: 25%;
         left: 50%;
+        transform: translate(0,0);
     }
     .overview-box-center {
         top: auto;
         right: auto;
         top: 0;
         left: 10%;
+        transform: translate(0,0);
     }
     .overview-box-bottom {
         top: auto;
         left: auto;
         top: 45%;
         left: 5%;
+        transform: translate(0,0);
     }   
     .overview-right p {
         font-size: 14px;
@@ -1139,6 +1154,7 @@ footer {
         bottom: auto;
         left: -3%;
         top: 0;
+        transform: translate(0,0);
     }
     .pos-2 {
         width: 126.2%;
@@ -1146,6 +1162,7 @@ footer {
         top: auto;
         left: -3%;
         top: 7%;
+        transform: translate(0,0);
     }
     .pos-3 {
         width: 119.6%;
@@ -1153,6 +1170,7 @@ footer {
         bottom: auto;
         left: -35%;
         top: 29%;
+        transform: translate(0,0);
     }
     .pos-4 {
         width: 136.9%;
@@ -1160,6 +1178,7 @@ footer {
         top: auto;
         left: -10%;
         top: 50%;
+        transform: translate(0,0);
     }
     .pos-5 {
         position: absolute;
@@ -1168,6 +1187,18 @@ footer {
         bottom: auto;
         left: -30%;
         top: 75%;
+        transform: translate(0,0);
+    }
+    .pos-2 .faq-front,
+    .pos-2 .faq-back {
+        padding: 15% 25% 15% 15%;
+    }
+    .pos-3 .faq-front,
+    .pos-3 .faq-back {
+        padding: 15% 15% 15% 30%;
+    }
+    .pos-5 p {
+        margin: 16px 0 16px 32px;
     }
     .faq-card:hover .faq-front { opacity: 1; }
     .faq-card:hover .faq-back { opacity: 0; }
@@ -1175,6 +1206,10 @@ footer {
     .faq-card.is-active .faq-back { opacity: 1; }
     .site-footer {
         padding: 40px 0;
+    }
+    .faq-text a {
+        text-decoration: none;
+        color: #A93B3E;
     }
     .footer-inner {
         flex-direction: column;
@@ -1235,5 +1270,17 @@ footer {
     .footer-sns a {
         width: 35px;
         height: 35px;
+    }
+    .footer-insta svg {
+        width: 25px;
+        height: auto
+    }
+    .footer-twitter svg {
+        width: 22px;
+        height: auto;
+    }
+    .footer-youtube svg {
+        width: 29px;
+        height: auto;
     }
 }
