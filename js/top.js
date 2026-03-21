@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- メニューの開閉処理 ---
     const openBtn = document.querySelector('.saikun-menu');
     const closeBtn = document.querySelector('.menu-close');
     const slideMenu = document.querySelector('.open-menu');
+
 
     if (openBtn && slideMenu) {
         openBtn.addEventListener('click', () => {
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', () => {
+    // --- ヒーローアニメーション処理 ---
     const loadingScreen = document.getElementById('loading');
     const centerImg = document.querySelector('.top-center');
     const sideImgs = document.querySelectorAll('.top-right, .top-left');
@@ -25,6 +28,13 @@ window.addEventListener('load', () => {
 
     if (loadingScreen) {
         loadingScreen.classList.add('loaded'); 
+    }
+
+    // 🌟 【今回追加した部分】PC/スマホで中央画像を切り替える 🌟
+    // 画面幅が500px以下（スマホ）の時だけ、srcをスマホ用の画像に書き換えます
+    const isMobileLoad = window.matchMedia("(max-width: 500px)").matches;
+    if (isMobileLoad && centerImg) {
+        centerImg.src = "../images/top-hero-logo-sp.jpg"; 
     }
 
     setTimeout(() => {
@@ -36,35 +46,45 @@ window.addEventListener('load', () => {
 
         setTimeout(() => {
             if (centerImg) {
-                // 🌟 【今回追加した部分】🌟
-                // 登場が終わったら、CSSの「1秒遅れてフワッと動く」設定を解除する！
-                // これでスクロールに遅れずにピタッと吸い付くようになります。
+                // 登場が終わったら、CSSのフワッと動く設定を解除してJSに引き継ぐ
                 allImgs.forEach(img => {
                     img.style.transition = 'none';
                 });
 
-                initializeScrollAnimation(centerImg, sideImgs, bottomRightLogo);
+                initializeScrollAnimationResponsive(centerImg, sideImgs, bottomRightLogo);
             }
         }, totalEntryTime);
 
     }, 200); 
 
-    function initializeScrollAnimation(centerImg, sideImgs, bottomRightLogo) {
-        const lerp = (start, end, progress) => {
-            return start + (end - start) * progress;
-        };
-
+    // スクロールアニメーション関数
+    function initializeScrollAnimationResponsive(centerImg, sideImgs, bottomRightLogo) {
         const animateOnScroll = () => {
             const scrollY = window.scrollY || window.pageYOffset;
-            const totalScroll = window.innerHeight * 2; 
+            
+            // ⭐ スマホかどうかを判定
+            const isMobile = window.matchMedia("(max-width: 500px)").matches;
+            
+            // ⭐ スクロール範囲の設定
+            const totalScroll = isMobile ? window.innerHeight * 1.5 : window.innerHeight * 2; 
 
             let progress = scrollY / totalScroll;
             if (progress < 0) progress = 0;
             if (progress > 1) progress = 1;
 
-            const startSize = Math.min(window.innerWidth * 0.50, 700);
+            // ⭐ 初期サイズをCSSと完全に一致させる（カクつき防止）
+            let startSize;
+            if (isMobile) {
+                startSize = window.innerWidth * 0.90;
+                if (startSize > 400) startSize = 400; 
+            } else {
+                startSize = window.innerWidth * 0.50;
+                if (startSize > 700) startSize = 700;
+            }
+
             const endWidth = document.documentElement.clientWidth;
-            const endHeight = window.innerHeight;
+            // 🌟 変更1: スマホの縦マックスまで広げるために、実際のエリアの高さを測る
+            const endHeight = document.querySelector('.stick-area').clientHeight;
 
             const currentWidth = startSize + (endWidth - startSize) * progress;
             const currentHeight = startSize + (endHeight - startSize) * progress;
@@ -75,7 +95,13 @@ window.addEventListener('load', () => {
             centerImg.style.maxHeight = 'none';
             centerImg.style.flexShrink = '0'; 
 
-            const yOffset = -100 * (1 - progress);
+            // 🌟 変更2: スマホ版の初期位置を少し上げる（-30px）
+            let yOffset;
+            if (isMobile) {
+                yOffset = -99 * (1 - progress); // -30の数字を大きくするとさらに上に上がります
+            } else {
+                yOffset = -100 * (1 - progress); // PCはズレなし
+            }
             centerImg.style.transform = `translateY(${yOffset}px)`;
 
             let clipProgress = progress * 1.5; 
@@ -131,4 +157,44 @@ window.addEventListener('load', () => {
             requestAnimationFrame(animateOnScroll);
         });
     }
+
+    // --- Swiperスライダーの設定 ---
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,                 // 最後まで行ったら最初に戻る（無限ループ）
+        slidesPerView: 'auto',      // CSSで指定した幅（320px）に合わせて複数表示
+        centeredSlides: true,       // 選択されているスライドを画面の中央に配置
+        spaceBetween: 30,           // カードとカードの間の隙間（px）
+        grabCursor: true,           // マウスを乗せると「手のマーク」になり、引っ張れることが直感的にわかるようになる
+        speed: 600,                 // スライドが動くスピード
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,          
+        },
+    });
+
+    // --- ニュースの「もっと見る」ボタンの設定 ---
+    const btnMore = document.getElementById('btn-more');
+    const hiddenItems = document.querySelectorAll('.is-hidden');
+
+    if (btnMore) {
+        btnMore.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            
+            hiddenItems.forEach(function(item) {
+                item.classList.remove('is-hidden');
+            });
+            
+            btnMore.style.display = 'none';
+        });
+    }
+    const faqCards = document.querySelectorAll('.faq-card');
+    faqCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // スマホ（画面幅500px以下）の時だけ作動させる
+            if (window.matchMedia("(max-width: 500px)").matches) {
+                // タップで is-active クラスをつけたり外したりする
+                this.classList.toggle('is-active');
+            }
+        });
+    });
 });
