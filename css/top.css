@@ -2,9 +2,10 @@
 
 body {
     background-color: #FFFCFC;
-    font-family: "Inter", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     scroll-behavior: smooth;
     overflow-x: clip;
+    letter-spacing: 0.06em;
 }
 #loading-screen {
   position: fixed;
@@ -248,6 +249,7 @@ h1 {
     text-decoration: underline;
     text-decoration-color: #A93B3E;
     text-underline-offset: 7px;
+    letter-spacing: 0.16em !important;
 }
 .overview-box {
     display: flex;
@@ -837,6 +839,9 @@ footer {
     color: #A93B3E;
 }
 @media (max-width:500px) {
+    body {
+        letter-spacing: 0.02em;
+    }
     .sp {
         display: block !important;
     }
