@@ -400,6 +400,7 @@ h1 {
     height: 222px;
     width: 332px;
     display: block;
+    object-fit: cover;
 }
 .event-box-bottom {
     display: flex;
