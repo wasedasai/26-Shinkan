@@ -56,3 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
         heroObserver.observe(heroArea);
     }
 });
+
+
