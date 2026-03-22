@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 100);
 
-
     // =========================================================
     // 2. メニューの開閉処理
     // =========================================================
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     // =========================================================
     // 3. ページ読み込み完了後（load）の処理まとめ
     // =========================================================
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // --- ローディング画面の2段階アニメーション ---
         const logo2 = document.getElementById('logo2');
-        const loadingScreen = document.getElementById('loading-screen'); // ※HTMLのIDと合わせる
+        const loadingScreen = document.getElementById('loading-screen'); 
         const mainContent = document.getElementById('main-content');
 
         if (logo1 && logo2 && loadingScreen) {
@@ -66,58 +64,64 @@ document.addEventListener('DOMContentLoaded', () => {
             logo2.style.opacity = 1;
             loadingScreen.style.backgroundColor = '#FFFCFC';
             
-            await sleep(1000); // 新しいロゴを2秒間表示して読ませる
+            await sleep(1500); // 新しいロゴを表示して読ませる
 
             // ④ 2つ目のロゴをフェードアウト
             logo2.style.opacity = 0;
             
-            await sleep(1000); // 消えるまで1秒待つ
+            await sleep(200); // ★変更箇所：消えるのを待つ時間を短縮（500→200）
 
             // ⑤ 背景（ローディング画面全体）をフェードアウト
             loadingScreen.style.opacity = 0;
             
-            await sleep(500); // 背景が消えるまで0.5秒待つ
+            await sleep(300); // ★変更箇所：背景が透けるのを待つ時間を短縮（500→300）
 
             // ⑥ ローディング画面を裏側に隠す
             loadingScreen.style.display = 'none';
             if (mainContent) mainContent.style.display = 'block';
+
+            // =========================================================
+            // ★お引越し箇所：ローディングが完全に終わってからメイン画像を出す
+            // =========================================================
+            const centerImg = document.querySelector('.top-center');
+            const sideImgs = document.querySelectorAll('.top-right, .top-left');
+            const bottomRightLogo = document.querySelector('.hero-logo');
+            const allImgs = document.querySelectorAll('.top-left, .top-center, .top-right');
+
+            // PC/スマホで中央画像を切り替える
+            const isMobileLoad = window.matchMedia("(max-width: 500px)").matches;
+            if (isMobileLoad && centerImg) {
+                centerImg.src = "../images/top-hero-logo-sp.jpg"; 
+            }
+
+            // ローディング画面が消えた直後（50ミリ秒後）に八角形をフワッと登場させる
+            setTimeout(() => {
+                allImgs.forEach(img => {
+                    img.classList.add('is-show'); 
+                });
+
+                const totalEntryTime = 1800; 
+
+                setTimeout(() => {
+                    if (centerImg) {
+                        allImgs.forEach(img => {
+                            img.style.transition = 'none';
+                        });
+
+                        initializeScrollAnimationResponsive(centerImg, sideImgs, bottomRightLogo);
+                    }
+                }, totalEntryTime);
+
+            }, 50); // ★変更箇所：すぐに出るように短縮（200→50）
+
         } else {
             // 要素が見つからなかった場合の安全対策
             clearInterval(loadingInterval);
         }
 
-        // --- ヒーローアニメーション処理 ---
-        const centerImg = document.querySelector('.top-center');
-        const sideImgs = document.querySelectorAll('.top-right, .top-left');
-        const bottomRightLogo = document.querySelector('.hero-logo');
-        const allImgs = document.querySelectorAll('.top-left, .top-center, .top-right');
-
-        // PC/スマホで中央画像を切り替える
-        const isMobileLoad = window.matchMedia("(max-width: 500px)").matches;
-        if (isMobileLoad && centerImg) {
-            centerImg.src = "../images/top-hero-logo-sp.jpg"; 
-        }
-
-        setTimeout(() => {
-            allImgs.forEach(img => {
-                img.classList.add('is-show'); 
-            });
-
-            const totalEntryTime = 1800; 
-
-            setTimeout(() => {
-                if (centerImg) {
-                    allImgs.forEach(img => {
-                        img.style.transition = 'none';
-                    });
-
-                    initializeScrollAnimationResponsive(centerImg, sideImgs, bottomRightLogo);
-                }
-            }, totalEntryTime);
-
-        }, 200); 
-
+        // =========================================================
         // スクロールアニメーション関数
+        // =========================================================
         function initializeScrollAnimationResponsive(centerImg, sideImgs, bottomRightLogo) {
             const animateOnScroll = () => {
                 const scrollY = window.scrollY || window.pageYOffset;
@@ -138,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const endWidth = document.documentElement.clientWidth;
-                // 要素が存在しない場合のエラー回避処理を追加
                 const stickArea = document.querySelector('.stick-area');
                 const endHeight = stickArea ? stickArea.clientHeight : window.innerHeight;
 
@@ -208,8 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // =========================================================
         // --- Swiperスライダーの設定 ---
-        // Swiperが読み込まれていない画面でのエラーを防止する処理を追加
+        // =========================================================
         if (typeof Swiper !== 'undefined') {
             const swiper = new Swiper('.mySwiper', {
                 loop: true,
@@ -225,7 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // =========================================================
         // --- ニュースの「もっと見る」ボタンの設定 ---
+        // =========================================================
         const btnMore = document.getElementById('btn-more');
         const hiddenItems = document.querySelectorAll('.is-hidden');
 
@@ -241,7 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // =========================================================
         // --- FAQのアコーディオン設定 ---
+        // =========================================================
         const faqCards = document.querySelectorAll('.faq-card');
         faqCards.forEach(card => {
             card.addEventListener('click', function() {
