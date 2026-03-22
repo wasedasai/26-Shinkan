@@ -27,7 +27,17 @@ a {
 .content1 {
     height: auto;
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 15vh;
+    position: relative;
+}
+.right-block svg {
+    width: 58vw;
+    height: auto;
+}
+.right-thing {
+    position: absolute;
+    right: -20%;
+    top: -90px;
 }
 .title {
     display: flex;
@@ -38,9 +48,6 @@ a {
     font-weight: normal;
     margin: 3vh 0 3vh 0;
 }
-.schedule {
-    font-size: 20px;
-}
 .red-tx {
     font-size: 32px;
     color: #A93B3E;
@@ -50,7 +57,7 @@ a {
 .content1over {
     height: auto;
     width: 100%;
-    margin-top: 5vh;
+    margin-top: 8vh;
 }
 .requir-container {
     position: relative;
@@ -79,8 +86,54 @@ a {
     margin-top: 3vh;
 }
 @media (max-width:500px) {
+    section {
+        overflow-x: visible;
+    }
+    .content {
+        overflow-x: hidden;
+    }
+    p {
+    letter-spacing: 0.02em;
+    line-height: 26px;
+    font-size: 14px;
+    }
+    .content1 {
+        margin-top: 7vh;
+    }
+    .right-block svg {
+        width: 53vw;
+    }
+    .right-thing {
+        position: absolute;
+        top: -10px;
+    }
     .title h2 {
         font-size: 24px;
         letter-spacing: 0.16em;
+    }
+    .content1 p {
+        margin-top: 2vh;
+    }
+    .red-tx {
+        font-size: 22px;
+    }
+    .date-line2 {
+        display: block;
+        margin-left: 140px;
+        margin-top: 5px;
+    }
+    .content1over {
+    margin-top: 6vh;
+    }
+    .requir-box {
+    position:static;
+    transform: translateX(0);
+    height: 45px;
+    width: 235px;
+    font-size: 18px;
+    margin: 35px 0 0 60px;
+    }
+    .content3 .requir-container {
+    margin-top: 1.5vh;
     }
 }
