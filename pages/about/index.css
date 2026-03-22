@@ -1,0 +1,561 @@
+body {
+ margin: 0;
+ background-color: #FFFCFC;
+   font-family: 'noto sans JP';
+ color: #1b1c1c;
+}
+
+
+.flex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+
+
+.content h2{
+   font-size: 26px;
+   letter-spacing: 6;
+   line-height: 26px;
+   text-align: center;
+}
+
+
+/* ヘッダー */
+header {
+   top: 0;
+   right: 0;
+   width: 100%;
+   height: 100px;
+   z-index: 100;
+   background-color: #FFFCFC;
+   box-sizing: border-box;
+}
+.header-logo img {
+   height: 100px;
+}
+.saikun-menu {
+   cursor: pointer;
+   text-align: center;
+   margin-right: 40px;
+}
+.sai-menu {
+   position: fixed;
+   top: 15px;
+   right: 40px;
+   z-index: 999;
+}
+.saikun-menu img {
+   width: 40px;
+   height: auto;
+}
+.menu-texts {
+   font-size: 24px;
+   text-align: center;
+}
+.open-menu {
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 50%;
+   height: 100vh;
+   background-color: #FDEAE9;
+   z-index: 999;
+
+
+   transform: scale(0);
+   transform-origin: top right; /* ←右上から広がる */
+   transition: transform 0.5s ease;
+
+
+   opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1),
+               opacity 0.4s ease;
+}
+.open-menu.is-open {
+   transform: scale(1);
+   opacity: 1;
+}
+.menu-close {
+   position: absolute;
+   top: 30px;
+   right: 30px;
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   z-index: 1000;
+   transition: transform 0.4s ease;
+}
+
+
+
+
+/* メニュー開いたらしっかり回転 */
+.open-menu.is-open .menu-close {
+   transform: rotate(180deg);
+}
+
+
+.menu-close div {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background-color: #1b1c1c;
+}
+
+
+.menu-close div:nth-child(1) { transform: translateY(-50%) rotate(45deg); }
+.menu-close div:nth-child(2) { transform: translateY(-50%) rotate(-45deg); }
+.open-menu-container {
+   width: 90%;
+   margin: 100px auto 50px;
+}
+.line {
+   width: 100%;
+   height: 2px;
+   background-color: #1b1c1c;
+   margin: 20px 0;
+}
+.open-menu-container .flex {
+   display: flex;
+   justify-content: center;
+   position: relative;
+}
+
+
+
+
+.menu-texts a {
+   text-decoration: none;
+   color: #1C1B1B;
+   display: block;
+}
+.menu-texts p {
+   font-size: 18px;
+   padding: 13px 0;
+   margin: 0;
+   transition: color 0.3s;
+}
+.menu-texts a:hover p {
+   color: #A93B3E; /* マウスを乗せたときにえんじ色にする */
+}
+.menu-right {
+   display: flex;
+   margin-top: 15px;
+   flex-direction: row;
+   justify-content: center;
+   gap: 30px;
+}
+.menu-right a {
+   height: 43px;
+   width: 43px;
+   background-color: #A93B3E;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.insta {
+   height: 30px;
+   width: auto;
+}
+.twitter {
+   height: 25px;
+   width: auto;
+}
+.youtube {
+   height: 25px;
+   width: auto;
+}
+.hero {
+   position: relative;
+   overflow: hidden;
+}
+
+
+/* これが画像の上に乗る */
+.hero::after {
+ content: "";
+ position: absolute;
+ inset: 0;
+ background: rgba(0,0,0,0.4);
+ z-index: 1; /* ←重要 */
+}
+
+
+/* 画像は一番下 */
+.hero img {
+   width: 100vw;
+   height: 924px;
+   object-fit: cover;
+   display: block; /* ← これを追加！ */
+}
+
+
+/* 文字は一番上 */
+.hero h1 {
+    position: absolute;
+   bottom: 50%;
+   transform: translateY(50%);
+   left: 110px;
+   writing-mode: vertical-rl;
+   color: #FFFCFC;
+   font-size: 32px;      /* フォントサイズ */
+ letter-spacing: 50%;    /* トラッキング0% */
+ line-height: 50px; 
+ z-index: 2; /* ←これで暗くならない */
+ white-space: nowrap; /* これを追加：自動改行を禁止する */
+}
+.sidebar {
+   position:sticky;
+   top: 0;
+   left: 95px;
+   width: 200px;
+   height: 100vh;
+   padding: 60px 40px;
+   display: flex;
+   flex-direction: column;
+    justify-content: center; /* 中央寄せにするとダイヤが綺麗に見えます */
+    box-sizing: border-box;
+  z-index: 10;    /* 必要以上に大きくしない */
+    flex-shrink: 0; /* サイドバーが潰れないように固定 */
+}
+.title-wrapper {
+   flex-grow: 1;
+   display: flex;
+   align-items: flex-start;
+   margin-left: 20px;
+   margin-top: 120px; /* ← これを追加。数字を大きくするほど全体が下に下がります */
+}
+.main-wrapper {
+   display: flex;
+   align-items: flex-start;
+   position: relative;
+   width: 100%;
+}
+.main-title-container {
+   position: relative;
+   width: fit-content;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.diamond {
+   position: absolute;
+}
+.top {
+   top: -80px;
+   left: 10px;
+}
+.bottom {
+   bottom: -65px;
+   right: -5px;
+}
+.vertical-title {
+   writing-mode: vertical-rl;
+   text-orientation: upright;
+   font-size: 32px;
+   letter-spacing: 0.5em;
+   transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.vertical-title.is-hidden {
+   opacity: 0;
+   transform: translateY(-20px);
+}
+
+#main-title[data-current-title="運営スタッフの活動概要"] {
+    font-size: 0.8em;          /* 文字を少し小さくする（1em = 元の大きさ） */
+    letter-spacing: -0.05em;    /* 文字と文字の間（トラッキング）を少し詰める */
+    line-height: 1.2;          /* 行間を詰めて、圧迫感を減らす */
+
+}
+
+
+.bottom-nav {
+   display: flex;
+   flex-direction: column;
+   gap: 9px;
+   margin-bottom: 30px;
+}
+.bottom-nav a {
+   text-decoration: none;
+   color: #1C1B1B;
+   font-size: 16px;
+   white-space: nowrap;
+}
+.bottom-nav a.active {
+   color: #A93B3E;
+   border-bottom: 1px solid #A93B3E;
+   padding-bottom: 2px;
+   width: fit-content;
+}
+.content {
+   flex-grow: 1;
+}
+
+.eee {
+ margin-left: 160px;
+ margin-top: 200px;
+ margin-right: 67px;
+}
+
+.honbun{
+    font-size: 20px;
+    color: #1b1c1c;
+    letter-spacing: 6%;    /* トラッキング0% */
+ line-height: 33px; 
+}
+
+.image3{
+    display: flex;
+    gap: 32px;
+    margin-top: 100px;
+}
+
+.square-image{
+width: 370px;         /* 好きなサイズを指定 */
+    aspect-ratio: 1 / 1;  /* これで正方形を維持 */
+    object-fit: cover;    /* 画像が引き伸ばされないように「いい感じ」に切り抜く */
+}
+
+.section3-left-right{
+    display: flex;
+    /* gap: 255px; */
+    justify-content: space-between; /* これ！ */
+    align-items: center;            /* 上下中央も合わせると綺麗 */
+}
+
+.day{
+    flex: 1; /* これを追加！空いているスペースを全部使う設定 */
+}
+
+
+
+.section3-mini-title{
+   display: flex;
+    align-items: center;     /* 上下方向の真ん中に揃える（高さが違う時便利） */
+    gap: 30px;              /* 間隔を30pxあける */
+    margin-bottom: -30px;
+}
+
+.section3-title-honbun{
+   margin-bottom: 40px;
+}
+
+.section3-mini-title-text{
+   font-size: 28px;
+}
+
+.member{
+   display: flex;
+  align-items: baseline; /* 文字の底（ベースライン）で揃える */
+   gap: 20px; 
+}
+
+.sixfive{
+   font-size: 30px;
+   font-weight: medium;
+   color: #1b1c1c;
+}
+
+.chohoke-image{
+   width: 600px;        /* 好きな数字 px */
+    height: 430px;       /* 横と同じ数字にすれば正方形 */
+    object-fit: cover;
+ 
+}
+
+.chushaku{
+   font-size: 18px;
+   color: #1b1c1c;
+   letter-spacing: 4%;
+}
+
+.color-enji {
+    color: #A93B3E; /* 早稲田祭カラーっぽいエンジ色 */
+    font-weight: bold; /* ついでに太字にするともっと目立ちます！ */
+}
+
+
+
+
+
+
+
+/* 各セクションにある程度の高さを持たせる（判定しやすくするため） */
+section {
+    min-height: 100vh; 
+    padding: 100px 50px;
+    box-sizing: border-box;
+}
+
+.content {
+    flex-grow: 1;
+    width: calc(100% - 250px); /* サイドバーの分を引く */
+}
+
+
+   footer {
+    margin-top: 20vh;
+}
+.site-footer {
+    background-color: #FDEAE9;
+    padding: 80px 0;
+    color: #1C1B1B;
+}
+.footer-inner {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-left {
+    width: 35%;
+    margin-right: 5%;
+}
+.footer-logo {
+    width: 100%;
+    height: auto;
+}
+.footer-right {
+    width: 65%;
+    border-top: 1px solid #1C1B1B;
+    border-bottom: 1px solid #1C1B1B;
+    padding: 40px 0;
+}
+.footer-right-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.footer-btn {
+    background-color: #A93B3E;
+    color: #FFFCFC;
+    text-decoration: none;
+    padding: 12px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    transition: 0.3s;
+}
+.footer-btn:hover {
+    background-color: #1C1B1B;
+}
+.footer-sns {
+    display: flex;
+    gap: 15px;
+}
+.footer-sns a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #A93B3E;
+    transition: 0.3s;
+}
+.footer-sns a:hover {
+    background-color: #1C1B1B;
+}
+.footer-sns img {
+    width: 24px;
+    height: auto;
+}
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-col {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 48%;
+}
+.nav-col li {
+    margin-bottom: 25px;
+}
+.nav-col li:last-child {
+    margin-bottom: 0;
+}
+.nav-col a {
+    text-decoration: none;
+    color: #1C1B1B;
+    font-size: 24px;
+    transition: 0.3s;
+}
+.nav-col a:hover {
+    color: #A93B3E;
+}
+
+
+@media (max-width: 768px){
+   .site-footer {
+        padding: 40px 0;
+    }
+    .footer-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-left,
+    .footer-right {
+        width: 100%;
+    }
+    .footer-left {
+        text-align: center;
+        margin: 0;
+    }
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+    .footer-right-top {
+        display: contents;
+    }
+    .footer-btn {
+        order: 1;
+        width: 80%;
+        max-width: 280px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 18px 24px;
+    }
+    .footer-nav {
+        order: 2;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .nav-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .nav-col li {
+        margin-bottom: 0;
+    }
+    .nav-col a {
+        font-size: 16px;
+    }
+    .footer-sns {
+        order: 3;
+        gap: 20px;
+    }
+    .footer-sns a {
+        width: 35px;
+        height: 35px;
+    }
+
+
+}
