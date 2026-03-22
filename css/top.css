@@ -83,7 +83,7 @@ header {
 }
 .sai-menu {
     position: fixed;
-    top: 15px;
+    top: 25px;
     right: 40px;
     z-index: 999;
 }
@@ -507,7 +507,7 @@ h1 {
 }
 .introduce {
     width: 100%;
-    margin-top: 34vh;
+    margin-top: 20vh;
 }
 .straking-section {
     width: 100%;
@@ -869,6 +869,7 @@ footer {
     }
     .sai-menu {
         position: fixed;
+        top: 10px;
         right: 15px; 
         margin-right: 0;
     }
@@ -915,7 +916,8 @@ footer {
         height: 25px;
     }
     .scroll-container {
-        height: 300vh;
+        height: 230vh;
+        background-position: 20% 80%;
     }
     .stick-area {
         height: 100vh;
@@ -1067,6 +1069,9 @@ footer {
     }
     .news-item time {
         margin-right: 21px;
+    }
+    .introduce {
+        margin-top: 0;
     }
     .content-left {
         width: 100%;

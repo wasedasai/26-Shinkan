@@ -30,12 +30,12 @@ header {
 }
 .sai-menu {
     position: fixed;
-    top: 15px;
+    top: 25px;
     right: 40px;
     z-index: 999;
 }
-.saikun-menu img {
-    width: 48px;
+.saikun-menu svg {
+    width: 37px;
     height: auto;
 }
 .menu-texts {
@@ -358,13 +358,18 @@ footer {
         height: 90px; 
         margin: 0 0 0 -15px;
     }
+    .logo-sp svg {
+        height: 55px;
+        width: auto;
+    }
     .sai-menu {
         position: fixed;
+        top: 10px;
         right: 15px; 
         margin-right: 0;
     }
-    .saikun-menu img {
-        width: 30px;
+    .saikun-menu svg {
+        width: 38px;
         height: auto;
     }
     .open-menu {
@@ -379,30 +384,32 @@ footer {
         margin: 14px auto;
     }
     .menu-text{
-        font-size: 10px !important;
+        margin-top: -2px;
+        font-size: 14px !important;
     }
     .menu-texts p {
         font-size: 16px;
+        padding: 10px 0;
     }
     .open-menu-container .flex {
         flex-direction: column;
     }
     .menu-right {
-        gap: 15px;
+        gap: 25px;
         margin-top: 9px;
     }
     .menu-right a {
+        height: 35px;
+        width: 35px;
+    }
+    .sai-insta svg {
+        height: 30px;
+    }
+    .sai-twitter svg {
+        height: 28px;
+    }
+    .sai-youtube svg {
         height: 25px;
-        width: 25px;
-    }
-    .insta {
-        height: 18px;
-    }
-    .twitter {
-        height: 13px;
-    }
-    .youtube {
-        height: 13px;
     }
     .hero img {
         width: 100%;
@@ -563,12 +570,16 @@ footer {
         width: 35px;
         height: 35px;
     }
-    .footer-sns img {
+    .footer-insta svg {
         width: 25px;
+        height: auto
+    }
+    .footer-twitter svg {
+        width: 22px;
         height: auto;
     }
-    .footer-youtube {
-        width: 29px !important;
+    .footer-youtube svg {
+        width: 29px;
         height: auto;
     }
 }
