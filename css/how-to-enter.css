@@ -1,0 +1,86 @@
+.hero {
+    position: relative;
+}
+p {
+    letter-spacing: 0.06em;
+    line-height: 33px;
+    font-size: 20px;
+    color: #1C1B1B;
+    margin: 0;
+}
+a {
+    color: #A93B3E;
+    text-underline-offset: 19%;
+}
+.black-screen {
+    position: absolute;
+    height: 99%;
+    width: 100%;
+    background-color: rgba(28, 27, 27, 0.35);
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+.hero h1 {
+    z-index: 2;
+}
+.content1 {
+    height: auto;
+    width: 100%;
+    margin-top: 10vh;
+}
+.title {
+    display: flex;
+    align-items: center;
+}
+.title h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin: 3vh 0 3vh 0;
+}
+.schedule {
+    font-size: 20px;
+}
+.red-tx {
+    font-size: 32px;
+    color: #A93B3E;
+    margin: 0 2px;
+    font-weight: 500;
+}
+.content1over {
+    height: auto;
+    width: 100%;
+    margin-top: 5vh;
+}
+.requir-container {
+    position: relative;
+    width: 100%;
+}
+.requir-box {
+    position: absolute;
+    bottom: 0;
+    right: 35%;
+    transform: translateX(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 280px;
+    background-color: #A93B3E;
+    font-size: 26px;
+    color: #FFFCFC;
+    transition: background-color 0.5s ease;
+    text-decoration: none;
+}
+.requir-box:hover {
+    background-color: #1C1B1B;
+}
+.content3 .requir-container {
+    margin-top: 3vh;
+}
+@media (max-width:500px) {
+    .title h2 {
+        font-size: 24px;
+        letter-spacing: 0.16em;
+    }
+}
