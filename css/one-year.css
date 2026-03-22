@@ -1,0 +1,156 @@
+section {
+    margin-top: 100px;
+}
+.one-year-box {
+    height: fit-content;
+    width: 1110px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.start {
+    height: 75px;
+    width: 257px;
+    background-color: #A93B3E;
+    font-size: 40px;
+    color: #FFFCFC;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.one-year-box h2 {
+    color: #FFFCFC;
+    font-size: 32px;
+    margin: 0;
+}
+.card-header {
+    text-align: center;
+    height: 52px;
+    background-color: #A93B3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-contents img {
+    width: 373px;
+    height: auto;
+    margin-top: 25px;
+}
+.one-year-box p {
+    color: #1C1B1B;
+    font-size: 20px;
+    line-height: 33px;
+    letter-spacing: 0.06em;
+    margin: 20px 0 0 0;
+}
+.card-contents {
+    padding: 0 28px;
+}
+.year-card {
+    position: absolute;
+    border: 4px solid #A93B3E;
+    box-sizing: border-box;
+    background-color: #FFFCFC;
+}
+.station-assign {
+    height: 565px;
+    width: 448px;
+    left: 10%;
+    top: 5%;
+}
+.welcome-event {
+    height: 565px;
+    width: 448px;
+    left: 51%;
+    top: 6.5%;
+}
+.team-assign {
+    height: 565px;
+    width: 448px;
+    left: 45%;
+    top: 18%;
+}
+.soukei-event {
+    height: 565px;
+    width: 448px;
+    left: 3%;
+    top: 19%;
+}
+.terakoya {
+    height: 668px;
+    width: 448px;
+    top: 30%;
+    left: 10%;
+}
+.OCPJ {
+    height: 700px;
+    width: 448px;
+    top: 31%;
+    left: 56%;
+}
+.flex-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-title h3 {
+    font-size: 15px;
+    color: #FFFCFC;
+}
+.bottom-nav a {
+    white-space: nowrap;
+}
+.tikansai {
+    height: 563px;
+    width: 448px;
+    top: 46%;
+    left: 50%;
+}
+.summer-camp {
+    height: 555px;
+    width: 448px;
+    top: 48%;
+    left: 5%;
+}
+.toumonsai {
+    height: 552px;
+    width: 448px;
+    top: 59%;
+    left: 15%;
+}
+.wasedasai img {
+    width: 747px;
+    height: auto;
+}
+.wasedasai {
+    height: 826px;
+    width: 833px;
+    top: 70%;
+    left: 20%;
+}
+.winter-camp {
+    height: 613px;
+    width: 448px;
+    top: 86%;
+    left: 5%;
+}
+.shinkan-PJ {
+    height: 594px;
+    width: 448px;
+    top: 88%;
+    left: 50%;
+}
+.finish {
+    height: 87px;
+    width: 287px;
+    background-color: #A93B3E;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #FFFCFC;
+    transform: translateX(-46px);
+}
