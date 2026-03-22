@@ -559,6 +559,8 @@ a {
 
 .team-item svg {
   flex-shrink: 0;
+  width: 30px;   /* PC用 */
+    height: auto;
 }
 
 .team-item-green {
@@ -946,6 +948,8 @@ footer {
     }
 
     .team-item svg{
+        width: 20px;
+        height: auto;
         margin-top: 7px;
     }
 
