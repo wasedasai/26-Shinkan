@@ -453,6 +453,86 @@ footer {
     display: none;
 }
 @media (max-width: 500px) {
+
+    .eee {
+ margin-left: 10px;
+ margin-top: 200px;
+ margin-right: 10px;
+}
+
+.honbun{
+    font-size: 20px;
+    color: #1b1c1c;
+    letter-spacing: 6%;    /* トラッキング0% */
+ line-height: 33px; 
+}
+
+.image3{
+    display: flex;
+    gap: 32px;
+    margin-top: 100px;
+}
+
+.square-image{
+width: 100px;         /* 好きなサイズを指定 */ 
+    object-fit: cover;    /* 画像が引き伸ばされないように「いい感じ」に切り抜く */
+}
+
+
+
+.day{
+    flex: 1; /* これを追加！空いているスペースを全部使う設定 */
+}
+
+
+
+.section3-mini-title{
+   display: flex;
+    align-items: center;     /* 上下方向の真ん中に揃える（高さが違う時便利） */
+    gap: 30px;              /* 間隔を30pxあける */
+    margin-bottom: -30px;
+}
+
+.section3-title-honbun{
+   margin-bottom: 40px;
+}
+
+.section3-mini-title-text{
+   font-size: 28px;
+}
+
+.member{
+   display: flex;
+  align-items: baseline; /* 文字の底（ベースライン）で揃える */
+   gap: 20px; 
+}
+
+.sixfive{
+   font-size: 30px;
+   font-weight: medium;
+   color: #1b1c1c;
+}
+
+.chohoke-image{
+   width: 600px;        /* 好きな数字 px */
+    height: 430px;       /* 横と同じ数字にすれば正方形 */
+    object-fit: cover;
+ 
+}
+
+.chushaku{
+   font-size: 18px;
+   color: #1b1c1c;
+   letter-spacing: 4%;
+}
+
+.color-enji {
+    color: #A93B3E; /* 早稲田祭カラーっぽいエンジ色 */
+    font-weight: bold; /* ついでに太字にするともっと目立ちます！ */
+}
+
+
+
     .pc {
         display: none;
     }
