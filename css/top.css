@@ -109,6 +109,7 @@ header {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 .open-menu.is-open {
     transform: translateX(0);
@@ -442,6 +443,8 @@ h1 {
   --swiper-pagination-bullet-inactive-color: #d3d3d3; /* 選択されていない点の色（明るいグレー） */
   --swiper-pagination-bullet-inactive-opacity: 1; /* 選択されていない点の透明度（1でくっきり） */
   padding-bottom: 60px !important; 
+  --swiper-pagination-bullet-width: 14px;  /* 点の幅（デフォルトは8px） */
+  --swiper-pagination-bullet-height: 14px;
 }
 .swiper-pagination {
   bottom: 0 !important; 
@@ -743,6 +746,10 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.add img {
+    width: 450px;
+    height: auto;
 }
 .sp {
     display: none;
