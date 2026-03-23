@@ -82,16 +82,20 @@ header {
 .saikun-menu {
     cursor: pointer;
     text-align: center;
-    margin-right: 25px;
+    margin-right: 60px;
 }
 .sai-menu {
     position: fixed;
-    top: 25px;
-    right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    top: 17px;
+    gap: -8px;
     z-index: 999;
 }
 .saikun-menu svg {
-    width: 37px;
+    width: 40px;
     height: auto;
 }
 .menu-text {
@@ -157,7 +161,7 @@ header {
 }
 .menu-texts p {
     font-size: 18px;
-    padding: 13px 0;
+    padding: 20px 0;
     margin: 0;
     transition: color 0.3s;
 }
@@ -166,7 +170,8 @@ header {
 }
 .menu-right {
     display: flex;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 40px;
     flex-direction: row;
     justify-content: center;
     gap: 30px;
@@ -861,6 +866,86 @@ footer {
     color: #A93B3E;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {
+    .open-menu {
+        width: 80%;
+        height: 90%;
+    }
+
+    .site-footer {
+        padding: 40px 0;
+    }
+    .footer-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-left,
+    .footer-right {
+        width: 100%;
+    }
+    .footer-left {
+        text-align: center;
+        margin: 0;
+    }
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+    .footer-right-top {
+        display: contents;
+    }
+    .footer-btn {
+        order: 1;
+        width: 80%;
+        max-width: 280px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+        font-size: 23px;
+        padding: 18px 24px;
+    }
+    .footer-nav {
+        order: 2;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .nav-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .nav-col li {
+        margin-bottom: 0;
+    }
+    .nav-col a {
+        font-size: 25px;
+    }
+    .footer-sns {
+        order: 3;
+        gap: 20px;
+    }
+    .footer-sns a {
+        width: 50px;
+        height: 50px;
+    }
+    .footer-insta svg {
+        width: 38px;
+        height: auto
+    }
+    .footer-twitter svg {
+        width: 30px;
+        height: auto;
+    }
+    .footer-youtube svg {
+        width: 40px;
+        height: auto;
+    }
     .overview-box {
     display: flex;
     justify-content: center;
@@ -924,7 +1009,7 @@ footer {
         margin-top: 100px;
     }
 }
-@media (max-width:500px) {
+@media (max-width:767px) {
     body {
         letter-spacing: 0.02em;
     }
@@ -966,12 +1051,12 @@ footer {
         margin-right: 0;
     }
     .saikun-menu svg {
-        width: 38px;
+        width: 34px;
         height: auto;
     }
     .open-menu {
         width: 80%;
-        height: 650px;
+        height: 70%;
     }
     .menu-close {
         top: 15px;
@@ -981,7 +1066,9 @@ footer {
         margin: 14px auto;
     }
     .menu-text {
-        font-size: 14px;
+        font-size: 14px !important;
+        margin-top: -5px;
+        margin-left: -2px;
     }
     .menu-texts p {
         font-size: 16px;
@@ -999,13 +1086,13 @@ footer {
         width: 35px;
     }
     .sai-insta svg {
-        height: 30px;
+        height: 21px;
     }
     .sai-twitter svg {
-        height: 28px;
+        height: 20px;
     }
     .sai-youtube svg {
-        height: 25px;
+        height: 18px;
     }
     .scroll-container {
         height: 2000px;
