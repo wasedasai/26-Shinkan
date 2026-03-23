@@ -1,0 +1,69 @@
+.hunds-up-saikun{
+    width: 430px;
+    height: auto;
+    margin-top: 350px;
+}
+
+.profile-left-right{
+    display: flex;
+}
+
+/* --- 通常時の設定 --- */
+.info-part {
+    cursor: pointer;
+}
+
+/* 図形（path）の初期設定（滑らかに変化させるため） */
+.info-part path {
+    transition: fill 0.3s, stroke 0.3s;
+    stroke-width: 0; /* 最初は枠線なし */
+}
+
+/* 文字（text）の初期設定 */
+.info-part text {
+    fill: white; /* 最初は白い文字 */
+    font-size: 36px;
+    font-weight: 500;
+    text-anchor: middle;
+    transition: font-size 0.2s, fill 0.2s;
+    pointer-events: none; /* 文字がマウス反応を邪魔しないようにする */
+}
+
+
+/* --- マウスが乗った時（ホバー）の設定 --- */
+
+/* 1. 図形：内側を白にし、外側に元の色の枠線を付ける */
+/* 元の色をそのまま枠線にするには、JSで色を取得して設定するのが確実です */
+.info-part:hover path {
+    fill: #FFFCFC; /* 内側を白にする */
+    stroke-width: 13; /* 枠線を太くする */
+}
+
+
+/* マウスが乗った時（ホバー）の文字設定 */
+.info-part:hover text {
+    fill: #1c1b1b;      /* 文字を黒くする */
+    font-size: 20px;  /* サイズを大きくする（お好みで） */
+    transition: 0.2s; /* 滑らかに変化させる */
+}
+
+.honbun{
+    font-size: 14px;
+    color: #1b1c1c;
+    letter-spacing: 2%;    /* トラッキング0% */
+ line-height: 26px; 
+}
+
+.fukidashi{
+  margin-left: 350px;
+}
+
+.sns-sai{
+    width: 430px;
+    height: auto;
+}
+
+.sns{
+    display: flex;
+    align-items: center;
+}
