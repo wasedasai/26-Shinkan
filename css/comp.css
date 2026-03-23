@@ -2,7 +2,7 @@
 
 body {
     background-color: #FFFCFC;
-    font-family: "Inter", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     overflow-x: hidden;
 }
 .flex {
@@ -19,6 +19,9 @@ header {
     z-index: 100;
     background-color: #FFFCFC;
     box-sizing: border-box;
+}
+.hero h1 {
+    white-space: nowrap;
 }
 .header-logo img {
     height: 100px;
@@ -146,6 +149,7 @@ header {
     writing-mode: vertical-rl;
     color: #FFFCFC;
     font-size: 32px;
+    white-space: nowrap;
 }
 .hero img {
     width: 100vw;
@@ -230,10 +234,6 @@ header {
 }
 .content {
     flex-grow: 1;
-}
-.eee {
-    height: 500px;
-    width: auto;
 }
 footer {
     margin-top: 20vh;
@@ -426,6 +426,7 @@ footer {
         bottom: 10%;
         writing-mode: horizontal-tb;
         font-size: 28px;
+        letter-spacing: 0.13em;
     }
     .main-wrapper {
         flex-direction: column;

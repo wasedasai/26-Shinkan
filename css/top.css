@@ -2,9 +2,10 @@
 
 body {
     background-color: #FFFCFC;
-    font-family: "Inter", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     scroll-behavior: smooth;
     overflow-x: clip;
+    letter-spacing: 0.06em;
 }
 #loading-screen {
   position: fixed;
@@ -79,12 +80,12 @@ header {
 .saikun-menu {
     cursor: pointer;
     text-align: center;
-    margin-right: 40px;
+    margin-right: 25px;
 }
 .sai-menu {
     position: fixed;
     top: 25px;
-    right: 40px;
+    right: 25px;
     z-index: 999;
 }
 .saikun-menu svg {
@@ -248,6 +249,7 @@ h1 {
     text-decoration: underline;
     text-decoration-color: #A93B3E;
     text-underline-offset: 7px;
+    letter-spacing: 0.16em !important;
 }
 .overview-box {
     display: flex;
@@ -617,7 +619,7 @@ h1 {
 .faq-area {
     position: relative;
     width: 100%;
-    height: 800px;
+    height: 700px;
     margin-top: 20vh;
 }
 .faq-card {
@@ -676,15 +678,15 @@ h1 {
 .pos-1 {
     position: absolute;
     width: 25.4%;
-    left: 15%;
+    left: 8%;
     bottom: 48%;
     aspect-ratio: 3 / 2;
     transform: translate(-50%,50%);
 }
 .pos-2 {
     width: 41.5%;
-    left: 32%;
-    top: 23%;
+    left: 26%;
+    top: 20%;
     transform: translate(-50%,-50%);
 }
 .pos-3 {
@@ -696,7 +698,7 @@ h1 {
 .pos-4 {
     width: 47.8%;
     right: 37%;
-    top: 45%;
+    top: 42%;
     transform: translate(50%,-50%);
 }
 .pos-5 {
@@ -726,6 +728,7 @@ h1 {
     font-size: 26px;
     font-weight: bold;
     margin-left: 30px;
+    color: #A3CE6B;
 }
 .faq-text a {
     text-decoration: none;
@@ -837,6 +840,9 @@ footer {
     color: #A93B3E;
 }
 @media (max-width:500px) {
+    body {
+        letter-spacing: 0.02em;
+    }
     .sp {
         display: block !important;
     }
@@ -880,7 +886,7 @@ footer {
     }
     .open-menu {
         width: 80%;
-        height: 90%;
+        height: 650px;
     }
     .menu-close {
         top: 15px;
@@ -1143,7 +1149,7 @@ footer {
     right: 20px;
     }
     .faq-area {
-        height: 150vh;
+        height: 140vh;
         overflow-x: hidden;
         margin-top: 10vh;
     }
