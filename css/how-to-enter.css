@@ -43,6 +43,10 @@ a {
     display: flex;
     align-items: center;
 }
+.sidebar {
+    top: 100px;
+    left: 0;
+}
 .title h2 {
     font-size: 32px;
     font-weight: normal;
