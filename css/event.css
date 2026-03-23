@@ -1,8 +1,7 @@
 body {
-  margin: 0;
-  background-color: #FFFCFC;
-    font-family: "Inter", sans-serif;
-  color: #1b1c1c;
+    background-color: #FFFCFC;
+    font-family: 'Noto Sans JP', sans-serif;
+    overflow-x: hidden;
 }
 
 html {
@@ -735,6 +734,11 @@ a {
   height: auto;
 }
 
+.place-date svg {
+      width: auto;
+      height: 40px;
+      margin-left: -15px;
+    }
 
 
 footer {
@@ -838,13 +842,81 @@ footer {
   display: none;
 }
 
-@media (max-width: 500px) {
-.pc {
+.first-pc {
+        display: block;
+    }
+.first-sp {
+        display: none;
+    }
+
+
+.sp-only {
+  display: none;
+}
+
+.date-line{
+  display: none;
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .pc {
         display: none;
     }
     .sp {
         display: block;
     }
+    .sp-only {
+    display: block;
+  }
+    .first-pc {
+        display: none;
+    }
+    .first-sp {
+        display: block;
+        width: 70vw;
+        margin-top: 1vh;
+    }
+
+    .date-line{
+  display: block;
+}
+
+    .date-line {
+  line-height: 1.2;
+  }
+
+  .big {
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+    font-weight: 350;
+  }
+
+  .small {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+}
+
+.place-line .big{
+  font-size: 20px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+}
+
+  .first-sp .date-line:nth-child(2) {
+  text-align: right;
+}
+  .first-sp p {
+    margin: 0;
+  }
+
+  .first-sp .date-line {
+  margin-bottom: -5px; /* 好きな値に調整 */
+}
+
+
+
     header {
         width: 100%;
         height: 72px;
@@ -1138,29 +1210,12 @@ footer {
         height: auto;
     }
 
-    /* チームグリッドを1列に */
-    .team-grid {
-        display: block; 
+
+    .place-date svg {
+      width: auto;
+      height: 25px;
+      margin-left: -10px;
     }
-
-
-    .team-item {
-        font-size: 14px;
-        letter-spacing: 2;
-        gap: 8px;
-        line-height: 26px;
-        white-space: normal;       /* 折り返し許可 */
-        word-wrap: break-word;     /* 単語途中でも折り返す */
-        overflow-wrap: break-word;
-        align-items: flex-start; 
-    }
-
-    .team-item svg{
-        width: 20px;
-        height: auto;
-        margin-top: 7px;
-    }
-
 
     .mini {
         font-size: 20px;
@@ -1184,14 +1239,6 @@ footer {
         text-align: right;
     }
 
-    /* h1タイトル */
-    .event-detail h1 {
-        font-size: 24px;
-        line-height: 50px;
-        letter-spacing: 2;
-        margin-bottom: 3vh;
-    }
-
     .event-detail::before {
   content: "";
   position: absolute;
@@ -1210,11 +1257,13 @@ footer {
   pointer-events: none;
 }
     .event-detail h1 {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 26px;
         letter-spacing: 2;
         margin-bottom: 3vh;
     }
+
+    
 
     /* 右上・左下ダイヤモンドのサイズ・位置調整 */
     .diamond.top-right {
@@ -1260,11 +1309,56 @@ footer {
       line-height: 20px;
     }
 
+
+    .label-green {
+      border: 2px solid #a3ce6b;
+      width: 50px;
+      height: 50px;
+
+      aspect-ratio: 1 / 1; /* ← これで常に正方形 */
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+
+
+    .label-purple {
+      border: 2px solid #be86b9;
+      width: 50px;
+      height: 50px;
+
+      aspect-ratio: 1 / 1; /* ← これで常に正方形 */
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+
     .place{
       font-size: 14px;
         letter-spacing: 2%;
         line-height: 26px;
     }
+
+    .place-1{
+  font-size: 14px;
+    letter-spacing: 2%;
+    line-height: 26px;
+  margin: 0;       /* まずリセット */
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
 
      .bubble {
         position: relative;
@@ -1288,7 +1382,7 @@ footer {
       }
 
       .date svg {
-        width: 78vw;
+        width: 74vw;
         height: auto; 
         }
 
@@ -1304,6 +1398,37 @@ footer {
 
     border-width: 2px;   /* ← 細くすると綺麗 */
   }
+  .event-detail.purple .bottom-left {
+  transform: scale(0.8);
+}
+.event-detail.green .diamond.bottom-left {
+  left: -10px;
+  bottom: -20px;
+}
+
+
+.event-detail.purple .diamond.bottom-left {
+  left: -15px;
+  bottom: -25px;
+}
+
+.event-detail.green .bottom-left {
+  transform: scale(0.8);
+}
+
+
+/* section2全体で画像を中央に */
+#section2 .image-wrapper {
+  display: flex;
+  justify-content: center; /* 横中央 */
+  /* align-items: center; もし縦中央にしたい場合 */
+  margin-top: 80px; /* タイトルとの余白調整 */
+}
+
+#section2 .image-wrapper img {
+  max-width: 100%;  /* 画面内に収まる */
+  height: auto;
+}
 
     .bottom-nav {
         position: fixed;
@@ -1332,6 +1457,693 @@ footer {
         padding: 0 5%;
         width: 90%;
     }
+
+    .site-footer {
+        padding: 40px 0;
+    }
+    .footer-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-left,
+    .footer-right {
+        width: 100%;
+    }
+    .footer-left {
+        text-align: center;
+        margin: 0;
+    }
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+    .footer-right-top {
+        display: contents;
+    }
+    .footer-btn {
+        order: 1;
+        width: 80%;
+        max-width: 280px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 18px 24px;
+    }
+    .footer-nav {
+        order: 2;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .nav-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .nav-col li {
+        margin-bottom: 0;
+    }
+    .nav-col a {
+        font-size: 16px;
+    }
+    .footer-sns {
+        order: 3;
+        gap: 20px;
+    }
+    .footer-sns a {
+        width: 35px;
+        height: 35px;
+    }
+    .footer-insta svg {
+        width: 25px;
+        height: auto
+    }
+    .footer-twitter svg {
+        width: 22px;
+        height: auto;
+    }
+    .footer-youtube svg {
+        width: 29px;
+        height: auto;
+    }
+    .eee {
+        margin-left: 160px;
+        margin-top: 50px;
+        margin-right: 70px;
+        margin-bottom: 100px;
+        }
+
+
+}
+
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+    .sp {
+        display: block;
+    }
+    .sp-only {
+    display: block;
+  }
+    .first-pc {
+        display: none;
+    }
+    .first-sp {
+        display: block;
+        width: 70vw;
+        margin-top: 1vh;
+    }
+
+    .date-line{
+  display: block;
+}
+
+    .date-line {
+  line-height: 1.2;
+  }
+
+  .big {
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+    font-weight: 350;
+  }
+
+  .small {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+}
+
+.place-line .big{
+  font-size: 20px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+}
+
+  .first-sp .date-line:nth-child(2) {
+  text-align: right;
+}
+  .first-sp p {
+    margin: 0;
+  }
+
+  .first-sp .date-line {
+  margin-bottom: -5px; /* 好きな値に調整 */
+}
+
+
+
+    header {
+        width: 100%;
+        height: 72px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
+    section {
+        overflow-x: hidden;
+    }
+    .header-logo img {
+        height: 90px; 
+        margin: 0 0 0 -15px;
+    }
+    .logo-sp svg {
+        height: 55px;
+        width: auto;
+    }
+    .sai-menu {
+        position: fixed;
+        top: 10px;
+        right: 15px; 
+        margin-right: 0;
+    }
+    .saikun-menu svg {
+        width: 30px;
+        height: auto;
+    }
+    .open-menu {
+        width: 80%;
+        height: 90%;
+    }
+    .menu-close {
+        top: 15px;
+        right: 30px;
+    }
+    .line {
+        margin: 14px auto;
+    }
+    .menu-text{
+        margin-top: -2px;
+        font-size: 14px !important;
+    }
+    .menu-texts p {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+    .open-menu-container .flex {
+        flex-direction: column;
+    }
+    .menu-right {
+        gap: 25px;
+        margin-top: 9px;
+    }
+    .menu-right a {
+        height: 35px;
+        width: 35px;
+    }
+    .sai-insta svg {
+        height: 30px;
+    }
+    .sai-twitter svg {
+        height: 28px;
+    }
+    .sai-youtube svg {
+        height: 25px;
+    }
+    .hero img {
+        width: 100%;
+        height: 538px;
+        object-fit: cover;
+        object-position: 40% 50%;
+    }
+    .hero {
+        height: 100%;
+    }
+    .hero h1 {
+        position: absolute;
+        left: 10%;
+        bottom: 10%;
+        writing-mode: horizontal-tb;
+        font-size: 28px;
+        letter-spacing: 0.13em;
+    }
+    .main-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    .title-wrapper {
+        display: none; 
+    }
+    .sp-title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 60px 0 40px;
+        text-align: center;
+    }
+    .sp-title-inner {
+        justify-content: center;
+        position: relative;
+        display: inline-block;
+    }
+    .sp-section-title {
+        display: block;
+        font-size: 24px;
+        letter-spacing: 0.1em;
+        font-weight: normal; 
+        margin: 0;
+        padding: 0 10px;
+    }
+    .title-deco {
+        position: absolute;
+        z-index: -1;
+    }
+    .title-deco svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .left-deco {
+        bottom: -35px;
+        left: -40px;
+    }
+    .right-deco {
+        top: -25px;
+        right: -40px;
+    }
+    .content h2 {
+        font-size: 24px;
+    }
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 0 40px 30px;
+        margin: 0;
+        background: none;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        pointer-events: none; 
+    }
+    .bottom-nav a {
+        pointer-events: auto;
+        width: fit-content;
+    }
+    .bottom-nav.is-hidden {
+        transform: translateY(120%);
+    }
+    .content {
+        margin-top: 0;
+        padding: 0 5%;
+        width: 90%;
+    }
+
+
+    .content h2 {
+        font-size: 24px;
+    }
+    .content h3 {
+        font-size: 20px;
+        letter-spacing: 2; 
+        line-height: 50px;
+        text-align: center;
+        font-weight: 500;
+    }  
+    
+    .bubble h2{
+      font-size: 20px;
+      letter-spacing: 2;
+      line-height: 26px;
+    }
+
+    .bubble-image {
+    display: block;
+    position: relative;
+    margin-top: -10vh;
+    text-align: right;
+  }
+
+  .bubble-image img {
+    width: 50%;
+    height: auto;
+    transform: scaleX(-1) translateX(-30px);
+  }
+
+
+    .button {
+        width: 60vw;
+        height: 10vw;
+        font-size: 14px;
+        letter-spacing: 2;
+        line-height: 26px;
+        padding: 0.5em 0.8em;
+    }
+
+
+    /* ボタンのグリッド列を2列に */
+    .buttons {
+        display: flex;          /* ← gridを上書き */
+        flex-direction: column; /* ← 縦並び */
+        align-items: center;
+        gap: 15px;
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+      .buttons .button {
+    transform: none !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+    /* タイトルのフォントサイズ */
+    .sp-section-title {
+        font-size: 20px;
+    }
+
+    /* コンテンツ全体の余白調整 */
+    .content {
+        padding: 5vh 5%;
+    }
+
+    /* hero画像の高さ */
+    .hero img {
+        height: 300px;
+        object-position: center center;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+        left: 10%;
+        bottom: 10%;
+        writing-mode: horizontal-tb;
+    }
+
+
+
+        /* カード全体 */
+    .event-detail {
+        max-width: 90%;          /* 幅を狭くして余白を確保 */
+        margin: 15vh auto;       /* 上下の余白も少なく */
+        padding: 40px 20px 40px; /* 内側のパディングを小さく */
+    }
+
+    /* ① 横並びやめる（縦にする） */
+  .event-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ② 画像をカードいっぱいに */
+  .event-top img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ③ 余白リセット（これ重要） */
+  .event-detail {
+    padding: 40px 20px 40px; /* 必要に応じて調整 */
+  }
+
+  /* ④ タイトル非表示 */
+  .event-top .section-title {
+    display: none;
+  }
+
+      /* セクションタイトル */
+    .section-title {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* 左の画像 */
+    .event-left {
+        width: 100%;
+    }
+    .event-left img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    .place-date svg {
+      width: auto;
+      height: 25px;
+      margin-left: -10px;
+    }
+
+    .mini {
+        font-size: 20px;
+        letter-spacing: 2;
+        line-height: 26x;
+        font-weight: 550;
+    }
+
+
+    /* 本文テキスト */
+    .event-top p{
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 2;  /* スマホは左寄せが読みやすい */
+    }
+
+    .name {
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 2;
+        text-align: right;
+    }
+
+    .event-detail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--border-color);
+  clip-path: polygon(
+    60px 0,                    /* 左上 */
+    calc(100% - 130px) 0,       /* 右上 */
+    100% 30px,
+    100% calc(100% - 60px),    /* 右下 */
+    calc(100% - 60px) 100%,
+    120px 100%,                 /* 左下 */
+    0 calc(100% - 60px),
+    0 60px
+  );
+  pointer-events: none;
+}
+    .event-detail h1 {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: 2;
+        margin-bottom: 3vh;
+    }
+
+    
+
+    /* 右上・左下ダイヤモンドのサイズ・位置調整 */
+    .diamond.top-right {
+        width: 130px;
+        height: auto;
+        top: -0.5;
+        left: 2;
+    }
+    .diamond.bottom-left {
+        width: 150px;
+        height: auto;
+        bottom: -1%;
+        left: 0;
+    }
+
+    .event-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* タイトル（SVG＋文字）は横に戻す */
+    .event-bottom .section-title {
+      display: flex;
+      flex-direction: row;   /* ← これが重要 */
+      align-items: center;   /* ← 縦位置揃える */
+      gap: 8px;              /* ← SVGと文字の間 */
+    }
+
+    .label-red {
+      border: 2px solid #A93B3E;
+      width: 50px;
+      height: 50px;
+
+      aspect-ratio: 1 / 1; /* ← これで常に正方形 */
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+
+    .label-green {
+      border: 2px solid #a3ce6b;
+      width: 50px;
+      height: 50px;
+
+      aspect-ratio: 1 / 1; /* ← これで常に正方形 */
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+
+
+    .label-purple {
+      border: 2px solid #be86b9;
+      width: 50px;
+      height: 50px;
+
+      aspect-ratio: 1 / 1; /* ← これで常に正方形 */
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+
+    .place{
+      font-size: 14px;
+        letter-spacing: 2%;
+        line-height: 26px;
+    }
+
+    .place-1{
+  font-size: 14px;
+    letter-spacing: 2%;
+    line-height: 26px;
+  margin: 0;       /* まずリセット */
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+     .bubble {
+        position: relative;
+        background: #FDEAE9; /* 薄いピンク */
+        padding: 15px 20px;
+        border-radius: 40px;
+        max-width: 90%;
+        margin: 0 auto;
+        }
+      .bubble::after {
+        content: "";
+        position: absolute;
+        bottom: -40px;
+        right: 100px;
+
+        width: 80px;
+        height: 50px;
+        background: #FDEAE9;
+
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+      }
+
+      .date svg {
+        width: 74vw;
+        height: auto; 
+        }
+
+        .button-1 {
+    width: 80%;          /* ← 画面に対していい感じの幅 */
+    max-width: 220px;   /* ← デカくなりすぎ防止 */
+
+    font-size: 16px;     /* ← 小さく */
+    line-height: 24px;
+
+    padding: 0.8em 1em;  /* ← 少し余白 */
+    margin: 20px auto;   /* ← 上下余白調整 */
+
+    border-width: 2px;   /* ← 細くすると綺麗 */
+  }
+  .event-detail.purple .bottom-left {
+  transform: scale(0.8);
+}
+.event-detail.green .diamond.bottom-left {
+  left: -10px;
+  bottom: -20px;
+}
+
+
+.event-detail.purple .diamond.bottom-left {
+  left: -15px;
+  bottom: -25px;
+}
+
+.event-detail.green .bottom-left {
+  transform: scale(0.8);
+}
+
+
+/* section2全体で画像を中央に */
+#section2 .image-wrapper {
+  display: flex;
+  justify-content: center; /* 横中央 */
+  /* align-items: center; もし縦中央にしたい場合 */
+  margin-top: 80px; /* タイトルとの余白調整 */
+}
+
+#section2 .image-wrapper img {
+  max-width: 100%;  /* 画面内に収まる */
+  height: auto;
+}
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 0 40px 30px;
+        margin: 0;
+        background: none;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        pointer-events: none; 
+    }
+    .bottom-nav a {
+        pointer-events: auto;
+        width: fit-content;
+    }
+    .bottom-nav.is-hidden {
+        transform: translateY(120%);
+    }
+    .content {
+        margin-top: 5vh;
+        padding: 0 5%;
+        width: 90%;
+    }
+
     .site-footer {
         padding: 40px 0;
     }
