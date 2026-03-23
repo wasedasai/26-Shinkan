@@ -253,11 +253,13 @@ header {
 }
 h1 {
     font-size: 32px;
+    width: fit-content;
+    margin: 0 auto;
     text-align: center;
-    text-decoration: underline;
-    text-decoration-color: #A93B3E;
-    text-underline-offset: 10px;
     letter-spacing: 0.16em !important;
+    padding-left: 0.16em;
+    border-bottom: 3px solid #A93B3E;
+    padding-bottom: 3px;
     font-weight: normal;
 }
 h2 {
@@ -354,8 +356,9 @@ h3 {
 .overview-right h1 {
     margin-top: 15vh;
 }
-.overview-right  p {
+.overview-right p {
     font-size: 20px;
+    padding: 0 40px;
 }
 .btn-wrap {
     height: 49px;
@@ -470,7 +473,7 @@ h3 {
 .news-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 50px 0;
+    margin: 50px 0 50px 0;
     border-top: 2px solid #1C1B1B;
 }
 .news-item {
@@ -687,7 +690,8 @@ h3 {
 }
 .faq-icon {
     margin-top: -15px;
-    font-size: 40px;;
+    font-size: 40px;
+    margin-bottom: 15px;
 }
 .faq-text {
     font-size: 20px;
@@ -749,7 +753,7 @@ h3 {
     text-decoration: none;
     font-size: 26px;
     font-weight: bold;
-    margin-left: 30px;
+    margin-left: 15px;
     color: #A3CE6B;
 }
 .faq-text a {
@@ -994,7 +998,7 @@ footer {
         font-size: 17px;
     }
     .faq-icon {
-        margin: -15px 0 15px 0;
+        margin: -15px 0 0px 0;
         font-size: 30px;
     }
     .pos-2 .faq-front {
@@ -1167,6 +1171,9 @@ footer {
         left: 50%;
         transform: translate(0,0);
     }
+    .space {
+    margin-top: 0;
+    }
     .overview-box-center {
         top: auto;
         right: auto;
@@ -1186,6 +1193,7 @@ footer {
 }
     .overview-right p {
         font-size: 14px;
+        padding: 0 25px;
     }
     .back-diamond { 
         transform: translateX(-2vw);
@@ -1341,6 +1349,12 @@ footer {
     .faq-area p {
         font-size: 16px;
     }
+    .faq-icon {
+        margin-bottom: 0px !important;
+    }
+    .faq-text {
+        margin-top: 30pxpx;
+    }
     .pos-1 {
         position: absolute;
         width: 55.2%;
@@ -1383,9 +1397,9 @@ footer {
         top: 75%;
         transform: translate(0,0);
     }
-    .pos-2 .faq-back {
+    /* .pos-2 .faq-back {
         padding: 10% 25% 20% 15%;
-    }
+    } */
     .pos-3 .faq-front,
     .pos-3 .faq-back {
         padding: 15% 15% 15% 30%;
