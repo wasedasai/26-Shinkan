@@ -6,6 +6,10 @@ body {
     scroll-behavior: smooth;
     overflow-x: clip;
     letter-spacing: 0.06em;
+    margin: 0;
+}
+:where(body) {
+    color: #1C1B1B;
 }
 #loading-screen {
   position: fixed;
@@ -64,8 +68,6 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
-/* ヘッダー周り（開くボタン） */
 header {
     top: 0;
     right: 0;
@@ -109,6 +111,7 @@ header {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 .open-menu.is-open {
     transform: translateX(0);
@@ -248,8 +251,15 @@ h1 {
     text-align: center;
     text-decoration: underline;
     text-decoration-color: #A93B3E;
-    text-underline-offset: 7px;
+    text-underline-offset: 10px;
     letter-spacing: 0.16em !important;
+    font-weight: normal;
+}
+h2 {
+    font-weight: normal;
+}
+h3 {
+    font-weight: normal;
 }
 .overview-box {
     display: flex;
@@ -350,7 +360,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 15vw;
+    margin-left: 18vw;
     transition: background-color 0.5s ease;
 }
 .btn-detail {
@@ -442,12 +452,14 @@ h1 {
   --swiper-pagination-bullet-inactive-color: #d3d3d3; /* 選択されていない点の色（明るいグレー） */
   --swiper-pagination-bullet-inactive-opacity: 1; /* 選択されていない点の透明度（1でくっきり） */
   padding-bottom: 60px !important; 
+  --swiper-pagination-bullet-width: 14px;  /* 点の幅（デフォルトは8px） */
+  --swiper-pagination-bullet-height: 14px;
 }
 .swiper-pagination {
   bottom: 0 !important; 
 }
 .news {
-    max-width: 60vw;
+    max-width: 75vw;
     margin: 10vh auto 15vh auto;
 }
 .news-list {
@@ -459,7 +471,7 @@ h1 {
 .news-item {
     display: flex;
     align-items: center;
-    padding: 24px 0;
+    padding: 24px 80px;
     border-bottom: 2px solid #1C1B1B;
 }
 .news-data {
@@ -498,6 +510,7 @@ h1 {
   text-decoration: none;
   letter-spacing: 0.1em;
   transition: 0.5s;
+  cursor: pointer;
 }
 .btn-more:hover {
   background-color: #A93B3E;
@@ -569,7 +582,7 @@ h1 {
     margin-bottom: 20px;
 }
 .saikun-img {
-    width: 150px;
+    width: 224px;
     margin-top: 30px;
 }
 .arrow-btn {
@@ -713,6 +726,10 @@ h1 {
     text-align: center;
     transform: translate(50%,50%);
 }
+.pos-5 p {
+    text-decoration: none;
+    color: #FFFCFC;
+}
 .faq-area {
     color: #FFFCFC;
 }
@@ -743,6 +760,10 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.add img {
+    width: 450px;
+    height: auto;
 }
 .sp {
     display: none;
@@ -839,6 +860,70 @@ footer {
 .nav-col a:hover {
     color: #A93B3E;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {
+    .overview-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    }
+    .overview-left {
+        transform: translateX(-50px);
+    }
+    .overview-box h1 {
+        margin-top: 50px;
+    }
+    .event-intro {
+        margin-top: 100px;
+    }
+    .news {
+        margin: 100px auto 100px auto;
+    }
+    .introduce {
+    margin-top: 0;
+    }
+    .straking-section {
+    width: 100%;
+    height: 800px;
+    }
+    .section-content {
+    width: 90%;
+    max-width: 1200px;
+    padding: 80px 40px 80px 0;
+    height: 700px;
+    }
+    .section-kyoku {
+    top: 35px;
+    }
+    .section-year {
+    top: 70px;
+    }
+    .section-real {
+    top: 105px;
+    }
+    .faq-area {
+        margin-top: 100px;
+        height: 500px;
+    }
+    .faq-area p {
+        font-size: 17px;
+    }
+    .faq-icon {
+        margin: -15px 0 15px 0;
+        font-size: 30px;
+    }
+    .pos-2 .faq-front {
+        padding: 12% 15% 18% 15%;
+    }
+    .faq-card.is-active .faq-front { opacity: 0; }
+    .faq-card.is-active .faq-back { opacity: 1; }
+    .add {
+        margin-top: 100px;
+    }
+    footer {
+        margin-top: 100px;
+    }
+}
 @media (max-width:500px) {
     body {
         letter-spacing: 0.02em;
@@ -851,7 +936,7 @@ footer {
     }
     h1 {
         font-size: 22px;
-        text-underline-offset: 4px;
+        text-underline-offset: 7px;
     }
     header {
         width: 100%;
@@ -1075,6 +1160,7 @@ footer {
     .news-item {
         flex-direction: column;
         align-items: flex-start;
+        padding: 24px 40px;
     }
     .flex-news {
         flex-direction: column;
@@ -1210,9 +1296,8 @@ footer {
         top: 75%;
         transform: translate(0,0);
     }
-    .pos-2 .faq-front,
     .pos-2 .faq-back {
-        padding: 15% 25% 15% 15%;
+        padding: 10% 25% 20% 15%;
     }
     .pos-3 .faq-front,
     .pos-3 .faq-back {
@@ -1223,6 +1308,10 @@ footer {
     }
     .add {
         margin-top: 80px;
+    }
+    .add img {
+    width: 313px;
+    height: auto;
     }
     .faq-card:hover .faq-front { opacity: 1; }
     .faq-card:hover .faq-back { opacity: 0; }

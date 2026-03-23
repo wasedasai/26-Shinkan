@@ -1,0 +1,51 @@
+.diamonddesign {
+    display: flex;
+    margin-top: 30px;
+}
+.headdesign svg {
+    margin: 0;
+}
+.comingsoon {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+.text {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.text h1 {
+    font-size: 80px;
+    letter-spacing: 0.06em;
+    color: #1C1B1B;
+    margin: 0 15px;
+    font-weight: normal;
+}
+.comingsoon img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 541px;
+    width: 510px;
+    z-index: -1;
+    opacity: 0.18;
+}
+@media (max-width: 500px) {
+    .text {
+    text-align: center;
+    flex-direction: column;
+    }
+    .text h1 {
+    font-size: 50px;
+    letter-spacing: 0.03em;
+    margin: 10px 0;
+    }
+    .comingsoon img {
+    height: 356px;
+    width: 336px;
+    }
+}
