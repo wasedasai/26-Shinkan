@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const allImgs = document.querySelectorAll('.top-left, .top-center, .top-right');
 
             // PC/スマホで中央画像を切り替える
-            const isMobileLoad = window.matchMedia("(max-width: 500px)").matches;
-            if (isMobileLoad && centerImg) {
-                centerImg.src = "../images/top-hero.jpg"; 
-            }
+            // const isMobileLoad = window.matchMedia("(max-width: 500px)").matches;
+            // if (isMobileLoad && centerImg) {
+            //     centerImg.src = "../images/top-hero.jpg"; 
+            // }
 
             // ローディング画面が消えた直後（50ミリ秒後）に八角形をフワッと登場させる
             setTimeout(() => {
