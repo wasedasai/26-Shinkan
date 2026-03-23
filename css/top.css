@@ -198,7 +198,7 @@ header {
 }
 .stick-area {
     position: sticky;
-    top: 0vh;
+    top: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -923,11 +923,11 @@ footer {
         height: 25px;
     }
     .scroll-container {
-        height: 230vh;
+        height: 2000px;
         background-position: 20% 80%;
     }
     .stick-area {
-        height: 100vh;
+        height: 900px;
         gap: 10px;
         transform: translateY(50px);
     }
@@ -967,7 +967,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 75vh;
+    height: 675px;
     }
     .overview-left {
         flex: 2;
@@ -1009,6 +1009,9 @@ footer {
         left: 5%;
         transform: translate(0,0);
     }   
+    .overview-right h1 {
+    margin-top: 130px;
+}
     .overview-right p {
         font-size: 14px;
     }
@@ -1017,6 +1020,7 @@ footer {
 }
     .btn-wrap {
         margin-left: 60%;
+        margin-top: 40px;
         height: 30px;
         width: 113px;
     }
@@ -1024,7 +1028,7 @@ footer {
         font-size: 14px;
     }
     .event-intro {
-        margin-top: 10vh;
+        margin-top: 80px;
     }
     .swiper-slide {
     width: 335px!important;
@@ -1034,7 +1038,7 @@ footer {
         border: 3px solid #A93B3E;
     }
     .event-intro h1 {
-        margin-bottom: 5vh;
+        margin-bottom: 45px;
     }
     .pink-border { border-color: #BE86B9; }
     .red-border { border-color: #A93B3E; }
@@ -1047,8 +1051,9 @@ footer {
         font-size: 34px;
     }
     .event-box-top img {
-        height: auto;
-        width: 100%;
+        height: 185px !important;
+        width: 277px;
+        object-fit: cover;
     }
     .card-text h2 {
         font-size: 20px;
@@ -1061,9 +1066,10 @@ footer {
     }
     .news {
         max-width: 85vw;
+        margin: 80px auto 0 auto;
     }
     .news-list {
-        margin: 5vh 0 50px 0;
+        margin: 40px 0 50px 0;
         font-size: 14px;
     }
     .news-item {
@@ -1100,7 +1106,7 @@ footer {
         width: 100%;
     }
     .section-content {
-        height: 80vh;
+        height: 720px;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
@@ -1130,15 +1136,15 @@ footer {
     }
     .section-kyoku {
         top: auto;
-        top: 3vh;
+        top: 25px;
     }
     .section-year {
         top: auto;
-        top: 6vh;
+        top: 50px;
     }
     .section-real {
         top: auto;
-        top: 9vh;
+        top: 75px;
     }
     .arrow-btn {
     width: 30px;
@@ -1149,9 +1155,9 @@ footer {
     right: 20px;
     }
     .faq-area {
-        height: 140vh;
+        height: 1300px;
         overflow-x: hidden;
-        margin-top: 10vh;
+        margin-top: 80px;
     }
     .faq-area h2 {
         font-size: 20px;
@@ -1212,10 +1218,16 @@ footer {
     .pos-5 p {
         margin: 16px 0 16px 32px;
     }
+    .add {
+        margin-top: 80px;
+    }
     .faq-card:hover .faq-front { opacity: 1; }
     .faq-card:hover .faq-back { opacity: 0; }
     .faq-card.is-active .faq-front { opacity: 0; }
     .faq-card.is-active .faq-back { opacity: 1; }
+    .footer {
+    margin-top: 160px;
+    }
     .site-footer {
         padding: 40px 0;
     }
