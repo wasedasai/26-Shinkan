@@ -8,6 +8,9 @@ body {
     letter-spacing: 0.06em;
     margin: 0;
 }
+:where(body) {
+    color: #1C1B1B;
+}
 #loading-screen {
   position: fixed;
   top: 0;
@@ -65,8 +68,6 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
-/* ヘッダー周り（開くボタン） */
 header {
     top: 0;
     right: 0;
@@ -509,6 +510,7 @@ h3 {
   text-decoration: none;
   letter-spacing: 0.1em;
   transition: 0.5s;
+  cursor: pointer;
 }
 .btn-more:hover {
   background-color: #A93B3E;
@@ -580,7 +582,7 @@ h3 {
     margin-bottom: 20px;
 }
 .saikun-img {
-    width: 150px;
+    width: 224px;
     margin-top: 30px;
 }
 .arrow-btn {
@@ -724,6 +726,10 @@ h3 {
     text-align: center;
     transform: translate(50%,50%);
 }
+.pos-5 p {
+    text-decoration: none;
+    color: #FFFCFC;
+}
 .faq-area {
     color: #FFFCFC;
 }
@@ -854,7 +860,7 @@ footer {
 .nav-col a:hover {
     color: #A93B3E;
 }
-@media screen and (min-width: 501px) and (max-width: 1100px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {
     .overview-box {
     display: flex;
     justify-content: center;
@@ -930,7 +936,7 @@ footer {
     }
     h1 {
         font-size: 22px;
-        text-underline-offset: 4px;
+        text-underline-offset: 7px;
     }
     header {
         width: 100%;
@@ -1154,6 +1160,7 @@ footer {
     .news-item {
         flex-direction: column;
         align-items: flex-start;
+        padding: 24px 40px;
     }
     .flex-news {
         flex-direction: column;
@@ -1301,6 +1308,10 @@ footer {
     }
     .add {
         margin-top: 80px;
+    }
+    .add img {
+    width: 313px;
+    height: auto;
     }
     .faq-card:hover .faq-front { opacity: 1; }
     .faq-card:hover .faq-back { opacity: 0; }
