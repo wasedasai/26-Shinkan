@@ -327,6 +327,14 @@ width: 370px;         /* 好きなサイズを指定 */
     font-weight: bold; /* ついでに太字にするともっと目立ちます！ */
 }
 
+.image3 slideshow-container{
+    display: none;
+}
+
+.slide{
+    display: none;
+}
+
 #section2 .vertical-title {
     font-size: 15px !important;      /* 文字の大きさ */
     letter-spacing: 0.3em !important; /* 文字の間隔（縦書きなので上下に開きます） */
@@ -455,28 +463,72 @@ footer {
 @media (max-width: 500px) {
 
     .eee {
- margin-left: 10px;
- margin-top: 200px;
- margin-right: 10px;
+ margin-left: -40px;
+ margin-top: 100px;
+ margin-right: -40px;
 }
 
 .honbun{
-    font-size: 20px;
+    font-size: 14px;
     color: #1b1c1c;
-    letter-spacing: 6%;    /* トラッキング0% */
- line-height: 33px; 
+    letter-spacing: 2%;    /* トラッキング0% */
+ line-height: 26px; 
 }
 
 .image3{
-    display: flex;
-    gap: 32px;
-    margin-top: 100px;
+  display: none;
 }
 
 .square-image{
-width: 100px;         /* 好きなサイズを指定 */ 
-    object-fit: cover;    /* 画像が引き伸ばされないように「いい感じ」に切り抜く */
+display: none;
 }
+
+.image4 {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 250px;
+        margin-top: 40px;
+        overflow: hidden;
+    }
+
+    .square-image4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        animation: sp-fade-slider 6s infinite;
+    }
+
+    /* --- ここが重要！各.image4の中での順番を指定 --- */
+    /* 1枚目 */
+    .image4 img:nth-child(1) {
+        animation-delay: 0s;
+    }
+    /* 2枚目 */
+    .image4 img:nth-child(2) {
+        animation-delay: 2s;
+    }
+    /* 3枚目 */
+    .image4 img:nth-child(3) {
+        animation-delay: 4s;
+    }
+
+    /* アニメーションの内容（変更なし） */
+    @keyframes sp-fade-slider {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        33% { opacity: 1; }
+        43% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+}
+
+
+
 
 
 
@@ -780,5 +832,5 @@ width: 100px;         /* 好きなサイズを指定 */
         width: 29px;
         height: auto;
     }
-}
+
 

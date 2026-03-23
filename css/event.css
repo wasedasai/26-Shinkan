@@ -1,7 +1,14 @@
 body {
+<<<<<<< HEAD
+  margin: 0;
+  background-color: #FFFCFC;
+    font-family: "Inter", sans-serif;
+  color: #1b1c1c;
+=======
     background-color: #FFFCFC;
     font-family: 'Noto Sans JP', sans-serif;
     overflow-x: hidden;
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
 }
 
 html {
@@ -734,11 +741,14 @@ a {
   height: auto;
 }
 
+<<<<<<< HEAD
+=======
 .place-date svg {
       width: auto;
       height: 40px;
       margin-left: -15px;
     }
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
 
 
 footer {
@@ -842,6 +852,10 @@ footer {
   display: none;
 }
 
+<<<<<<< HEAD
+@media (max-width: 500px) {
+.pc {
+=======
 .first-pc {
         display: block;
     }
@@ -860,11 +874,14 @@ footer {
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
     .pc {
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
         display: none;
     }
     .sp {
         display: block;
     }
+<<<<<<< HEAD
+=======
     .sp-only {
     display: block;
   }
@@ -917,6 +934,7 @@ footer {
 
 
 
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
     header {
         width: 100%;
         height: 72px;
@@ -1210,6 +1228,32 @@ footer {
         height: auto;
     }
 
+<<<<<<< HEAD
+    /* チームグリッドを1列に */
+    .team-grid {
+        display: block; 
+    }
+
+
+    .team-item {
+        font-size: 14px;
+        letter-spacing: 2;
+        gap: 8px;
+        line-height: 26px;
+        white-space: normal;       /* 折り返し許可 */
+        word-wrap: break-word;     /* 単語途中でも折り返す */
+        overflow-wrap: break-word;
+        align-items: flex-start; 
+    }
+
+    .team-item svg{
+        width: 20px;
+        height: auto;
+        margin-top: 7px;
+    }
+
+
+=======
 
     .place-date svg {
       width: auto;
@@ -1217,6 +1261,7 @@ footer {
       margin-left: -10px;
     }
 
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
     .mini {
         font-size: 20px;
         letter-spacing: 2;
@@ -1239,6 +1284,17 @@ footer {
         text-align: right;
     }
 
+<<<<<<< HEAD
+    /* h1タイトル */
+    .event-detail h1 {
+        font-size: 24px;
+        line-height: 50px;
+        letter-spacing: 2;
+        margin-bottom: 3vh;
+    }
+
+=======
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
     .event-detail::before {
   content: "";
   position: absolute;
@@ -1257,14 +1313,21 @@ footer {
   pointer-events: none;
 }
     .event-detail h1 {
+<<<<<<< HEAD
+        font-size: 24px;
+=======
         font-size: 20px;
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
         line-height: 26px;
         letter-spacing: 2;
         margin-bottom: 3vh;
     }
 
+<<<<<<< HEAD
+=======
     
 
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
     /* 右上・左下ダイヤモンドのサイズ・位置調整 */
     .diamond.top-right {
         width: 130px;
@@ -1309,6 +1372,8 @@ footer {
       line-height: 20px;
     }
 
+<<<<<<< HEAD
+=======
 
     .label-green {
       border: 2px solid #a3ce6b;
@@ -1345,12 +1410,15 @@ footer {
     }
 
 
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
     .place{
       font-size: 14px;
         letter-spacing: 2%;
         line-height: 26px;
     }
 
+<<<<<<< HEAD
+=======
     .place-1{
   font-size: 14px;
     letter-spacing: 2%;
@@ -1360,6 +1428,7 @@ footer {
   margin-bottom: 20px;
 }
 
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
      .bubble {
         position: relative;
         background: #FDEAE9; /* 薄いピンク */
@@ -1382,7 +1451,11 @@ footer {
       }
 
       .date svg {
+<<<<<<< HEAD
+        width: 78vw;
+=======
         width: 74vw;
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
         height: auto; 
         }
 
@@ -1398,6 +1471,8 @@ footer {
 
     border-width: 2px;   /* ← 細くすると綺麗 */
   }
+<<<<<<< HEAD
+=======
   .event-detail.purple .bottom-left {
   transform: scale(0.8);
 }
@@ -1429,6 +1504,7 @@ footer {
   max-width: 100%;  /* 画面内に収まる */
   height: auto;
 }
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
 
     .bottom-nav {
         position: fixed;
@@ -1457,6 +1533,8 @@ footer {
         padding: 0 5%;
         width: 90%;
     }
+<<<<<<< HEAD
+=======
 
     .site-footer {
         padding: 40px 0;
@@ -2144,6 +2222,7 @@ footer {
         width: 90%;
     }
 
+>>>>>>> 2a0b2ea3a04a2180218d719805502d7b7fb3e529
     .site-footer {
         padding: 40px 0;
     }
