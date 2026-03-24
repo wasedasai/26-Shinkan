@@ -254,7 +254,7 @@ header {
     flex-grow: 1;
 }
 footer {
-    margin-top: 20vh;
+    margin-top: 7vh;
 }
 .site-footer {
     background-color: #FDEAE9;
@@ -363,6 +363,10 @@ footer {
     .site-footer {
         padding: 40px 0;
     }
+
+    footer {
+    margin-top: 7vh;
+}
     .footer-inner {
         flex-direction: column;
         gap: 30px;
@@ -475,7 +479,7 @@ footer {
     }
      .open-menu {
         width: 80%;
-        height: 70%;
+        height: 97%;
     }
     .menu-close {
         top: 15px;
@@ -615,6 +619,10 @@ footer {
     .site-footer {
         padding: 40px 0;
     }
+
+    footer {
+    margin-top: 7vh;
+}
     .footer-inner {
         flex-direction: column;
         gap: 30px;
