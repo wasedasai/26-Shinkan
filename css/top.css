@@ -867,6 +867,9 @@ footer {
     color: #A93B3E;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {
+    #loading-screen svg {
+        height: 150px;
+    }
     .open-menu {
         width: 80%;
         height: 90%;
@@ -967,6 +970,9 @@ footer {
     }
     .introduce {
     margin-top: 0;
+    }
+    .swiper {
+        margin-bottom: 100px;
     }
     .straking-section {
     width: 100%;
