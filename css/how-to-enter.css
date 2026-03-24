@@ -34,11 +34,14 @@ a {
     font-size: 24px;
 }
 .deta-line-center {
-    font-size: 28px;
+    font-size: 34px;
 }
 .right-block svg {
     width: 50vw;
     height: auto;
+}
+.title svg {
+    margin-right: 15px;
 }
 .right-thing {
     position: absolute;
@@ -93,6 +96,7 @@ a {
 }
 .content {
   padding: 100px 40px;
+  overflow-x: hidden;
   flex: 1;
 }
 @media (max-width:1150px) {
@@ -132,7 +136,8 @@ a {
     }
     .title h2 {
         font-size: 24px;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.06em;
+        line-height: 24px;
     }
     .content1 p {
         margin-top: 2vh;
@@ -147,8 +152,10 @@ a {
         height: fit-content;
         width: fit-content;
         margin: 5px 0;
+        margin-bottom: 0;
         margin-left: 100px;
-        font-size: 24px;
+
+        font-size: 30px;
     }
     .date-line2 {
         display: block;
