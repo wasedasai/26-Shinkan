@@ -1042,14 +1042,13 @@ footer {
         justify-content: space-between; /* ロゴとメニューを左右に振り分ける */
         align-items: center;
         padding: 0 10px;
-        overflow: hidden; /* 万が一中身が大きくても外にはみ出させない */
     }
     #loading-screen svg {
         height: 93px;
     }
     .header-logo img {
         height: 90px; 
-        margin: 0 0 0 -5px;
+        margin: 0 0 0 -15px;
     }
     .logo-sp svg {
         height: 55px;
@@ -1067,7 +1066,7 @@ footer {
     }
     .open-menu {
         width: 80%;
-        height: 70%;
+        height: 97%;
     }
     .menu-close {
         top: 15px;
