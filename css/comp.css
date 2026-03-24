@@ -4,6 +4,7 @@ body {
     background-color: #FFFCFC;
     font-family: 'Noto Sans JP', sans-serif;
     overflow-x: hidden;
+    margin: 0;
 }
 .flex {
     display: flex;
@@ -22,6 +23,7 @@ header {
 }
 .hero h1 {
     white-space: nowrap;
+    font-weight: 500;
 }
 .header-logo img {
     height: 100px;
@@ -29,16 +31,20 @@ header {
 .saikun-menu {
     cursor: pointer;
     text-align: center;
-    margin-right: 40px;
+    margin-right: 60px;
+    
 }
 .sai-menu {
     position: fixed;
-    top: 25px;
-    right: 40px;
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    justify-content: center; /* 【重要】縦方向の中央揃え */
+    top: 17px;
     z-index: 999;
+    gap: -8px;
 }
 .saikun-menu svg {
-    width: 37px;
+    width: 40px;
     height: auto;
 }
 .menu-texts {
@@ -103,7 +109,7 @@ header {
 }
 .menu-texts p {
     font-size: 18px;
-    padding: 13px 0;
+    padding: 20px 0;
     margin: 0;
     transition: color 0.3s;
 }
@@ -112,7 +118,8 @@ header {
 }
 .menu-right {
     display: flex;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 40px;
     flex-direction: row;
     justify-content: center;
     gap: 30px;
@@ -141,6 +148,10 @@ header {
     position: relative;
     overflow: hidden;
 }
+.hero {
+    position: relative;
+    overflow: hidden;
+}
 .hero h1 {
     position: absolute;
     bottom: 50%;
@@ -150,6 +161,8 @@ header {
     color: #FFFCFC;
     font-size: 32px;
     white-space: nowrap;
+    font-weight: 500;
+     letter-spacing: 50%;    /* トラッキング0% */
 }
 .hero img {
     width: 100vw;
@@ -158,8 +171,8 @@ header {
 }
 .sidebar {
     position:sticky;
-    top: 8vh;
-    left: 0;
+    top: 0;
+    left: 40px;
     width: 200px;
     height: 100vh;
     padding: 60px 40px;
@@ -174,6 +187,7 @@ header {
     display: flex;
     align-items: flex-start;
     margin-left: 20px;
+    margin-top: 60px; 
 }
 .main-wrapper {
     display: flex;
@@ -214,6 +228,7 @@ header {
     flex-direction: column;
     gap: 9px;
     margin-bottom: 30px;
+    white-space: nowrap; /* これを追加：自動改行を禁止する */
 }
 .bottom-nav a {
     text-decoration: none;
@@ -335,6 +350,89 @@ footer {
 .sp {
     display: none;
 }
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+     .open-menu {
+        width: 80%;
+        height: 90%;
+    }
+
+    .site-footer {
+        padding: 40px 0;
+    }
+    .footer-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-left,
+    .footer-right {
+        width: 100%;
+    }
+    .footer-left {
+        text-align: center;
+        margin: 0;
+    }
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+    .footer-right-top {
+        display: contents;
+    }
+    .footer-btn {
+        order: 1;
+        width: 80%;
+        max-width: 280px;
+        text-align: center;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+        font-size: 23px;
+        padding: 18px 24px;
+    }
+    .footer-nav {
+        order: 2;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .nav-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .nav-col li {
+        margin-bottom: 0;
+    }
+    .nav-col a {
+        font-size: 25px;
+    }
+    .footer-sns {
+        order: 3;
+        gap: 20px;
+    }
+    .footer-sns a {
+        width: 50px;
+        height: 50px;
+    }
+    .footer-insta svg {
+        width: 38px;
+        height: auto
+    }
+    .footer-twitter svg {
+        width: 30px;
+        height: auto;
+    }
+    .footer-youtube svg {
+        width: 40px;
+        height: auto;
+    }
+}
 @media (max-width: 500px) {
     .pc {
         display: none;
@@ -369,12 +467,12 @@ footer {
         margin-right: 0;
     }
     .saikun-menu svg {
-        width: 38px;
+        width: 34px;
         height: auto;
     }
-    .open-menu {
+     .open-menu {
         width: 80%;
-        height: 90%;
+        height: 70%;
     }
     .menu-close {
         top: 15px;
@@ -384,8 +482,9 @@ footer {
         margin: 14px auto;
     }
     .menu-text{
-        margin-top: -2px;
+        margin-top: -5px;
         font-size: 14px !important;
+        margin-left: -2px;
     }
     .menu-texts p {
         font-size: 16px;
@@ -403,13 +502,13 @@ footer {
         width: 35px;
     }
     .sai-insta svg {
-        height: 30px;
+        height: 21px;
     }
     .sai-twitter svg {
-        height: 28px;
+        height: 20px;
     }
     .sai-youtube svg {
-        height: 25px;
+        height: 18px;
     }
     .hero img {
         width: 100%;
@@ -427,6 +526,7 @@ footer {
         writing-mode: horizontal-tb;
         font-size: 28px;
         letter-spacing: 0.13em;
+        font-weight: 500;
     }
     .main-wrapper {
         flex-direction: column;
@@ -480,6 +580,7 @@ footer {
     }
     .content h2 {
         font-size: 24px;
+        font-weight: 500;
     }
     .bottom-nav {
         position: fixed;

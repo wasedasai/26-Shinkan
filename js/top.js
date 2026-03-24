@@ -222,6 +222,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 spaceBetween: 30,
                 grabCursor: true,
                 speed: 600,
+
+                autoplay: {
+                delay: 4000, // 5秒（5000ミリ秒）ごとにスライド
+                disableOnInteraction: false, // ユーザーがスワイプ等の操作をした後も自動再生を止めない
+                },
+
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
