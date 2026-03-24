@@ -41,7 +41,7 @@ a {
     height: auto;
 }
 .title svg {
-    margin-right: 15px;
+    margin-right: 30px;
 }
 .right-thing {
     position: absolute;
@@ -127,6 +127,9 @@ a {
     .content1 {
         margin-top: 7vh;
     }
+    .title svg {
+    margin-right: 15px;
+}
     .right-block svg {
         width: 53vw;
     }
