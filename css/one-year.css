@@ -24,6 +24,7 @@ section {
     color: #FFFCFC;
     font-size: 32px;
     margin: 0;
+    font-weight: 500;
 }
 .card-header {
     text-align: center;
@@ -81,8 +82,8 @@ section {
 .terakoya {
     height: 668px;
     width: 448px;
-    top: 30%;
-    left: 10%;
+    top: 29.5%;
+    left: 13%;
 }
 .OCPJ {
     height: 700px;
@@ -98,6 +99,7 @@ section {
 .flex-title h3 {
     font-size: 15px;
     color: #FFFCFC;
+    font-weight: 500;
 }
 .bottom-nav a {
     white-space: nowrap;
@@ -142,6 +144,77 @@ section {
     top: 88%;
     left: 50%;
 }
+.month-card {
+    position: absolute;
+    font-size: 26px;
+    color: #FFFCFC;
+    background-color: #A93B3E;
+    height: 62px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.big-num {
+    font-size: 48px;
+    align-self: center;
+    margin: 0 3px;
+    margin-bottom: 3px;
+}
+.mon-tx {
+    margin: 0 3px;
+    padding-bottom: 6px;
+}
+.may {
+    top: 5.2%;
+    left: 52%;
+}
+.june {
+    top: 18%;
+    left: 30%;
+}
+.july {
+    top: 29.7%;
+    left: 56%;
+}
+.sept {
+    top: 46.4%;
+    left: 37%;
+}
+.oct {
+    top: 57.7%;
+    left: 31%;
+}
+.nov {
+    top: 69%;
+    left: 60%;
+}
+.feb {
+    top: 86.4%;
+    left: 50%;
+}
+.saikun-container {
+    position: absolute;
+    display: inline-block;
+    top: 60%;
+    right: 0;
+}
+.saikun-container img {
+    width: 345px;
+    display: block;
+}
+.ballon {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: -80px;
+    background-image: url(../images/one-year/ballon-pc.svg);
+    background-size: 100% 100%;
+    padding: 20px 30px 40px;
+    width: max-content;
+    text-align: center;
+}
 .finish {
     height: 87px;
     width: 287px;
@@ -153,4 +226,282 @@ section {
     font-size: 40px;
     color: #FFFCFC;
     transform: translateX(-46px);
+}
+.sidebar {
+    left: 0;
+}
+.content {
+    transform: translateX(-40px);
+}
+.oneday-container {
+    padding-left: 50px;
+}
+.schedule-box {
+    border: 4px solid #A93B3E;
+    width: 1023px;
+    margin: 0 auto;
+    background-color: #FFFCFC;
+    color: #1C1B1B;
+}
+.schedule-header {
+    background-color: #A93B3E;
+    color: #FFFCFC;
+    text-align: center;
+    padding: 15px;
+    font-size: 32px;
+    font-weight: 500;
+}
+.timeline-wrapper {
+    position: relative;
+    padding: 40px 20px;
+}
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 2;
+}
+.timeline-line {
+    position: absolute;
+    top: 91px;
+    left: 30px;
+    right: 30px;
+    height: 4px;
+    background-color: #1C1B1B;
+    z-index: 1;
+}
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.timeline-item:nth-child(1) { flex: 2.5; }
+.timeline-item:nth-child(2) { flex: 1.8; }
+.timeline-item:nth-child(3) { flex: 0.8; }
+.timeline-item:nth-child(4) { flex: 1.8; }
+.timeline-item:nth-child(5) { flex: 2.0; }
+.timeline-item:nth-child(6) { flex: 2.0; }
+.timeline-item:nth-child(7) { flex: 2.0; }
+.timeline-item:nth-child(8) { flex: 1.5; }
+.timeline-item:nth-child(9) { flex: 1.0; } 
+.timeline-item:nth-child(10){ flex: 0.5; }
+.time {
+margin-bottom: 8px;
+text-align: center;
+font-size: 24px;
+}
+.circle {
+    width: 16px;
+    height: 16px;
+    background-color: #FFFCFC;
+    border: 4px solid #1C1B1B;
+    border-radius: 50%;
+    margin-bottom: 9px;
+    flex-shrink: 0;
+}
+.event {
+    text-align: center;
+    font-size: 24px;
+    writing-mode: vertical-rl;
+    text-align: left;
+}
+.schedule-footer {
+    border-top: 4px solid #A93B3E;
+    padding: 20px;
+    font-size: 20px;
+}
+.schedule-footer p {
+    margin: 0 0 5px 0;
+}
+.num {
+    text-combine-upright: all;
+}
+@media (max-width:1175px) {
+    .sp {
+        display: block;
+    }
+    .pc {
+        display: none;
+    }
+    .content {
+        padding: 0 15px;
+    }
+    .one-year-box {
+    height: fit-content;
+    width: 350px;
+    }
+    .start {
+    height: 39px;
+    width: 166px;
+    font-size: 25px;
+    color: #FFFCFC;
+    }
+    .one-year-box h2 {
+    font-size: 20px;
+    }
+    .card-header {
+    height: 34px;
+    }
+    .card-contents img {
+    width: 219px;
+    height: auto;
+    margin-top: 15px;
+    }
+    .one-year-box p {
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.02em;
+    margin: 14px 0 0 0;
+    }
+    .card-contents {
+    padding: 0 20px;
+    }
+    .year-card {
+    border: 2px solid #A93B3E;
+    }
+    .station-assign {
+    height: 382px;
+    width: 264px;
+    left: 0%;
+    top: 2%;
+    }
+    .welcome-event {
+    height: 390px;
+    width: 264px;
+    left: auto;
+    right: 0;
+    top: 8.5%;
+    }
+    .team-assign {
+    height: 441px;
+    width: 264px;
+    left: 0;
+    right: 0;
+    top: 17%;
+    }
+    .soukei-event {
+    height: 395px;
+    width: 264px;
+    left: 0%;
+    top: 24.4%;
+    }
+    .terakoya {
+    height: 470px;
+    width: 264px;
+    top: 33%;
+    left: 0%;
+    }
+    .OCPJ {
+    height: 480px;
+    width: 264px;
+    top: 41%;
+    left:auto;
+    right: 0;
+    }
+    .flex-title h3 {
+    font-size: 10px;
+    color: #FFFCFC;
+    }
+    .tikansai {
+    height: 385px;
+    width: 264px;
+    top: 50.5%;
+    left: auto;
+    right: 0;
+    }
+    .summer-camp {
+    height: 386px;
+    width: 264px;
+    top: 57%;
+    left: 0%;
+    }
+    .toumonsai {
+    height: 386px;
+    width: 264px;
+    top: 65%;
+    left: 2%;
+    }
+    .wasedasai img {
+    width: 291px;
+    height: auto;
+    }
+    .wasedasai {
+    height: 457px;
+    width: 341px;
+    top: 73%;
+    left: 2%;
+    }
+    .winter-camp {
+    height: 420px;
+    width: 264px;
+    top: 83%;
+    left: 24%;
+    }
+    .shinkan-PJ {
+    height: 418px;
+    width: 264px;
+    top: 90.4%;
+    left: 1%;
+    }
+    .month-card {
+    position: absolute;
+    font-size: 16px;
+    height: 35px;
+    width: 65px;
+    }
+    .big-num {
+    font-size: 30px;
+    margin: 0 2px;
+    margin-bottom: 5px;
+    }
+    .mon-tx {
+    margin: 0 2px;
+    padding-bottom: 3px;
+    }
+    .may {
+    top: 1.2%;
+    left: 0%;
+    }
+    .june {
+    top: 16%;
+    left: auto;
+    right: 0;
+    }
+    .july {
+    top: 32%;
+    left: 0%;
+    }
+    .sept {
+    top: 49.5%;
+    left: auto;
+    right: 0;
+    }
+    .oct {
+    top: 64.2%;
+    left: 2%;
+    }
+    .nov {
+    top: 72.3%;
+    left: auto;
+    right: 2%;
+    }
+    .feb {
+    top: 82.3%;
+    left: 24%;
+    }
+    .content {
+    transform: translateX(0);
+    }
+    .finish {
+    height: 39px;
+    width: 174px;
+    font-size: 25px;
+    transform: translateX(0px);
+    }
+    .saikun-container {
+    display: none;
+    }
 }
