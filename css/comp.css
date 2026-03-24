@@ -6,6 +6,9 @@ body {
     overflow-x: hidden;
     margin: 0;
 }
+:where(body) {
+    color: #1C1B1B;
+}
 .flex {
     display: flex;
     justify-content: space-between;

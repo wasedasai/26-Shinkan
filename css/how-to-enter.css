@@ -30,6 +30,9 @@ a {
     margin-top: 15vh;
     position: relative;
 }
+.content1 p {
+    font-size: 24px;
+}
 .right-block svg {
     width: 58vw;
     height: auto;
@@ -53,7 +56,7 @@ a {
     margin: 3vh 0 3vh 0;
 }
 .red-tx {
-    font-size: 32px;
+    font-size: 36px;
     color: #A93B3E;
     margin: 0 2px;
     font-weight: 500;
@@ -117,14 +120,22 @@ a {
     }
     .content1 p {
         margin-top: 2vh;
+        font-size: 22px;
     }
     .red-tx {
-        font-size: 22px;
+        font-size: 26px;
+    }
+    .deta-line-center {
+        display: block;
+        transform: rotate(90deg);
+        height: fit-content;
+        width: fit-content;
+        margin: 5px 0;
+        margin-left: 100px;
+
     }
     .date-line2 {
         display: block;
-        margin-left: 140px;
-        margin-top: 5px;
     }
     .content1over {
     margin-top: 6vh;

@@ -101,6 +101,7 @@ header {
 .menu-text {
     font-size: 16px;
     text-align: center;
+    transform: translateX(-4px);
 }
 .open-menu {
     position: fixed;
