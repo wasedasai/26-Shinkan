@@ -558,7 +558,7 @@ font-size: 24px;
     }
     .oneday-container {
     width: 330px;
-    height: 1993px;
+    height: fit-content;
     }
     .top-text {
         margin: 80px 0 40px;
