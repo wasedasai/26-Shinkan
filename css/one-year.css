@@ -1,13 +1,35 @@
 section {
     margin-top: 100px;
 }
+:where(p) {
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    line-height: 33px;
+    color: #1C1B1B;
+}
+.content {
+    padding-top: 100px;
+    overflow-x: hidden;
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    display: block;
+}
 .one-year-box {
-    height: fit-content;
+    height: 6856px;
     width: 1110px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.one-year-box,
+.oneday-container {
+    margin: 0 auto !important; 
+}
+footer {
+    margin-top: 0;
 }
 .start {
     height: 75px;
@@ -35,15 +57,12 @@ section {
     justify-content: center;
 }
 .card-contents img {
-    width: 373px;
+    width: 100%;
     height: auto;
-    margin-top: 25px;
+    margin: 25px auto 0;
 }
 .one-year-box p {
     color: #1C1B1B;
-    font-size: 20px;
-    line-height: 33px;
-    letter-spacing: 0.06em;
     margin: 20px 0 0 0;
 }
 .card-contents {
@@ -123,7 +142,7 @@ section {
     left: 15%;
 }
 .wasedasai img {
-    width: 747px;
+    width: 100%;
     height: auto;
 }
 .wasedasai {
@@ -227,19 +246,14 @@ section {
     color: #FFFCFC;
     transform: translateX(-46px);
 }
-.sidebar {
-    left: 0;
-}
-.content {
-    transform: translateX(-40px);
-}
 .oneday-container {
-    padding-left: 50px;
+    width: 1034px;
+    height: 1521px;
 }
 .schedule-box {
     border: 4px solid #A93B3E;
     width: 1023px;
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
     background-color: #FFFCFC;
     color: #1C1B1B;
 }
@@ -259,10 +273,9 @@ section {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: row;
     position: relative;
     z-index: 2;
+    height: 270px;
 }
 .timeline-line {
     position: absolute;
@@ -277,21 +290,31 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 60px;
 }
-.timeline-item:nth-child(1) { flex: 2.5; }
-.timeline-item:nth-child(2) { flex: 1.8; }
-.timeline-item:nth-child(3) { flex: 0.8; }
-.timeline-item:nth-child(4) { flex: 1.8; }
-.timeline-item:nth-child(5) { flex: 2.0; }
-.timeline-item:nth-child(6) { flex: 2.0; }
-.timeline-item:nth-child(7) { flex: 2.0; }
-.timeline-item:nth-child(8) { flex: 1.5; }
-.timeline-item:nth-child(9) { flex: 1.0; } 
-.timeline-item:nth-child(10){ flex: 0.5; }
+.timeline-item:nth-child(1)  { left: -1.3%;   transform: translateX(0); align-items: center; } /* 8:00（左端にピタッ！） */
+.timeline-item:nth-child(2)  { left: 13%; } /* 10:30 */
+.timeline-item:nth-child(3)  { left: 25.0%; } /* 12:20 */
+.timeline-item:nth-child(4)  { left: 33.3%; } /* 13:10 */
+.timeline-item:nth-child(5)  { left: 45.2%; } /* 15:00 */
+.timeline-item:nth-child(6)  { left: 57.1%; } /* 17:00 */
+.timeline-item:nth-child(7)  { left: 69.0%; } /* 19:00 */
+.timeline-item:nth-child(8)  { left: 80.9%; } /* 21:00 */
+.timeline-item:nth-child(9)  { left: 90.5%; } /* 22:30 */
+.timeline-item:nth-child(10) { left: 101.3%; transform: translateX(-100%); align-items: center; }
 .time {
 margin-bottom: 8px;
 text-align: center;
 font-size: 24px;
+}
+.timeline-item:first-child .circle,
+.timeline-item:last-child .circle,
+.timeline-item2:first-child .circle,
+.timeline-item2:last-child .circle{
+    visibility: hidden;
 }
 .circle {
     width: 16px;
@@ -307,30 +330,62 @@ font-size: 24px;
     font-size: 24px;
     writing-mode: vertical-rl;
     text-align: left;
+    letter-spacing: 0.2em;
 }
 .schedule-footer {
     border-top: 4px solid #A93B3E;
-    padding: 20px;
-    font-size: 20px;
+    padding: 25px 30px; /* 🌟 上下25px、左右30pxで少しゆとりを持たせる */
+    font-size: 20px;    /* 🌟 20pxだと大きすぎてスマホで崩れやすいので少し小さめに */
+    background-color: #FFFCFC;
 }
-.schedule-footer p {
-    margin: 0 0 5px 0;
+.schedule-footer p:last-child {
+    margin-bottom: 0; /* 一番最後の(3)の下には無駄な余白を作らない */
 }
+.timeline-item2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 60px;
+}
+.timeline-item2:nth-child(1)  { left: -1.3%;   transform: translateX(0); align-items: center; } /* 8:00（左端にピタッ！） */
+.timeline-item2:nth-child(2)  { left: 13%; } /* 10:30 */
+.timeline-item2:nth-child(3)  { left: 25.0%; } /* 12:20 */
+.timeline-item2:nth-child(4)  { left: 33.3%; } /* 13:10 */
+.timeline-item2:nth-child(5)  { left: 57.2%; } /* 15:00 */
+.timeline-item2:nth-child(6)  { left: 80.9%; } /* 17:00 */
+.timeline-item2:nth-child(7)  { left: 101.3%; transform: translateX(-100%); align-items: center; } /* 19:00 */
 .num {
     text-combine-upright: all;
 }
+.top-text {
+    margin-bottom: 60px;
+}
+.bottom-text {
+    margin-top: 40px;
+}
+.sp-oneyear {
+    display: none;
+}
 @media (max-width:1175px) {
-    .sp {
+    .content {
+        padding: 0;
+    }
+    :where(p) {
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        line-height: 26px;
+    }
+    .sp-oneyear {
         display: block;
     }
-    .pc {
+    .pc-oneyear {
         display: none;
     }
-    .content {
-        padding: 0 15px;
-    }
     .one-year-box {
-    height: fit-content;
+    height: 6166px;
     width: 350px;
     }
     .start {
@@ -378,7 +433,7 @@ font-size: 24px;
     .team-assign {
     height: 441px;
     width: 264px;
-    left: 0;
+    left: auto;
     right: 0;
     top: 17%;
     }
@@ -492,9 +547,6 @@ font-size: 24px;
     top: 82.3%;
     left: 24%;
     }
-    .content {
-    transform: translateX(0);
-    }
     .finish {
     height: 39px;
     width: 174px;
@@ -504,4 +556,90 @@ font-size: 24px;
     .saikun-container {
     display: none;
     }
+    .oneday-container {
+    width: 330px;
+    height: 1993px;
+    }
+    .top-text {
+        margin: 80px 0 40px;
+    }
+    .schedule-box {
+    width: 326px; /* 赤い枠線を画面幅に合わせる */
+    margin: 20px auto 0 auto;
+    border: 2px solid #A93B3E;
+}
+.schedule-header {
+    font-size: 20px;
+    padding: 10px;
+}
+.timeline-wrapper {
+    padding: 30px 10px;
+}
+.timeline-list {
+    height: 540px;
+    display: block;
+    position: relative;
+}
+.timeline-line {
+    top: 30px;
+    bottom: 30px;
+    left: 135px;   /* 左から80pxの位置に縦線を引く */
+    right: auto;  /* PC版のrightを解除 */
+    width: 2px;   /* 縦線なので高さを幅に */
+    height: auto; /* PC版のheightを解除 */
+}
+.timeline-item,
+.timeline-item2 {
+    position: absolute !important; 
+    left: 0 !important; /* PC版の横（left）の指定を無効化 */
+    width: 100%;
+    padding-left: 43px;
+    flex-direction: row; /* 中身（時間・丸・予定）は左から右へ横並びに */
+    align-items: center !important; /* 縦の中央揃え */
+    transform: translateY(-50%) !important; 
+}
+.timeline-item:nth-child(1)  { top: 0%;   transform: translateX(0); align-items: center; } /* 8:00（左端にピタッ！） */
+.timeline-item:nth-child(2)  { top: 13%; } /* 10:30 */
+.timeline-item:nth-child(3)  { top: 25.0%; } /* 12:20 */
+.timeline-item:nth-child(4)  { top: 33.3%; } /* 13:10 */
+.timeline-item:nth-child(5)  { top: 45.2%; } /* 15:00 */
+.timeline-item:nth-child(6)  { top: 57.1%; } /* 17:00 */
+.timeline-item:nth-child(7)  { top: 69.0%; } /* 19:00 */
+.timeline-item:nth-child(8)  { top: 80.9%; } /* 21:00 */
+.timeline-item:nth-child(9)  { top: 90.5%; } /* 22:30 */
+.timeline-item:nth-child(10) { top: 100%; transform: translateX(-100%); align-items: center; }
+.timeline-item2:nth-child(1)  { top: 0%;   transform: translateX(0); align-items: center; } /* 8:00（左端にピタッ！） */
+.timeline-item2:nth-child(2)  { top: 13%; } /* 10:30 */
+.timeline-item2:nth-child(3)  { top: 25.0%; } /* 12:20 */
+.timeline-item2:nth-child(4)  { top: 33.3%; } /* 13:10 */
+.timeline-item2:nth-child(5)  { top: 57.2%; } /* 15:00 */
+.timeline-item2:nth-child(6)  { top: 80.9%; } /* 17:00 */
+.timeline-item2:nth-child(7)  { top: 100%; transform: translateX(-100%); align-items: center; } /* 19:00 */
+.time {
+    width: 60px; /* 文字数が違っても丸の位置が揃うように幅を固定 */
+    text-align: right;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+.circle {
+    margin: 0 15px; /* 時間と予定の間の隙間 */
+    z-index: 2; /* 黒い線より上に表示 */
+    width: 13px;
+    height: 13px;
+    border: 2px solid #1C1B1B;
+}
+.event {
+    writing-mode: horizontal-tb; /* 縦書きを横書きにリセット！ */
+    letter-spacing: 0.02em;
+    text-align: left;
+    font-size: 15px;
+    flex: 1; /* 余った右側の空間をすべて使う */
+}
+.schedule-footer {
+    padding: 15px 20px;
+    border-top: 2px solid #A93B3E;
+}
+footer {
+    margin-top: -280px;
+}
 }
