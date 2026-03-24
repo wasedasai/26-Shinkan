@@ -2,68 +2,132 @@
     width: 430px;
     height: auto;
     margin-top: 350px;
+    display: block;
 }
-
 .profile-left-right{
     display: flex;
+    margin-top:-50px;
 }
-
-/* --- 通常時の設定 --- */
+.profile-right svg {
+    width: 100%;
+    height: auto;
+    max-width: 1050px; 
+    display: block;
+    margin: 0 auto;
+}
 .info-part {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
-
-/* 図形（path）の初期設定（滑らかに変化させるため） */
 .info-part path {
     transition: fill 0.3s, stroke 0.3s;
-    stroke-width: 0; /* 最初は枠線なし */
+    stroke-width: 0; 
 }
-
-/* 文字（text）の初期設定 */
 .info-part text {
-    fill: white; /* 最初は白い文字 */
+    fill: #FFFCFC; 
     font-size: 36px;
     font-weight: 500;
     text-anchor: middle;
     transition: font-size 0.2s, fill 0.2s;
-    pointer-events: none; /* 文字がマウス反応を邪魔しないようにする */
+    pointer-events: none; 
 }
-
-
-/* --- マウスが乗った時（ホバー）の設定 --- */
-
-/* 1. 図形：内側を白にし、外側に元の色の枠線を付ける */
-/* 元の色をそのまま枠線にするには、JSで色を取得して設定するのが確実です */
 .info-part:hover path {
-    fill: #FFFCFC; /* 内側を白にする */
-    stroke-width: 13; /* 枠線を太くする */
+    fill: #FFFCFC; 
+    stroke-width: 13;
 }
-
-
-/* マウスが乗った時（ホバー）の文字設定 */
 .info-part:hover text {
-    fill: #1c1b1b;      /* 文字を黒くする */
-    font-size: 20px;  /* サイズを大きくする（お好みで） */
-    transition: 0.2s; /* 滑らかに変化させる */
+    fill: #1c1b1b;    
+    font-size: 20px; 
+    transition: 0.2s; 
 }
-
 .honbun{
     font-size: 14px;
     color: #1b1c1c;
-    letter-spacing: 2%;    /* トラッキング0% */
+    letter-spacing: 2%;    
  line-height: 26px; 
 }
-
 .fukidashi{
-  margin-left: 350px;
+  margin-left: 150px;
+  display: block;
 }
-
 .sns-sai{
     width: 430px;
     height: auto;
 }
-
 .sns{
     display: flex;
     align-items: center;
+    gap: -70px;
+}
+.sns-link .link-text {
+    fill: #A93B3E; 
+    text-decoration: underline; 
+    cursor: pointer;
+}
+.link-text {
+    text-decoration-color: #A93B3E; 
+    text-decoration-thickness: 6.5%; 
+    text-underline-offset: 19%;   
+}
+.fukidashi-sp{
+    display: none;
+}
+.text-sp {
+    display: none;
+}
+.text-pc {
+    display: block;
+}
+@media (max-width: 500px) {
+    .hunds-up-saikun{
+display: none;
+}
+.profile-right svg {
+        width: 120vw !important;    
+        max-width: none !important; 
+        height: auto !important;
+        margin-left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    .profile-right {
+        width: 100%;
+        overflow: hidden; 
+        padding: 0 !important; 
+        margin-top: 50px;
+    }
+.honbun{
+    font-size: 14px;
+    color: #1b1c1c;
+    letter-spacing: 2%;    
+ line-height: 26px; 
+}
+.fukidashi{
+  display: none;
+}
+.fukidashi-sp{
+    display: block;
+    margin-top: 60px;
+}
+.sns-sai{
+    width: 300px;
+    height: auto;
+    margin-right: -190px;
+    margin-top: -50px;
+}
+.sns{
+    display: flex;
+    flex-direction: column;
+}
+.link-text {
+    fill: #A93B3E !important;
+    text-decoration: underline;
+    text-decoration-thickness: 6.5%; 
+    text-underline-offset: 19%;   
+}
+.text-pc {
+        display: none; /* PC用を隠す */
+    }
+.text-sp {
+        display: block; /* スマホ用を出す */
+}
 }
