@@ -2,15 +2,15 @@
 
 
 .eee {
- margin-left: 160px;
  margin-top: 200px;
- margin-right: 67px;
+ margin-left: 80px;
+ margin-right: 60px;
 }
 
 .honbun{
     font-size: 20px;
     color: #1b1c1c;
-    letter-spacing: 6%;    /* トラッキング0% */
+    letter-spacing: 6%;  
  line-height: 33px; 
 }
 
@@ -21,28 +21,27 @@
 }
 
 .square-image{
-width: 403px;         /* 好きなサイズを指定 */
-    aspect-ratio: 1 / 1;  /* これで正方形を維持 */
-    object-fit: cover;    /* 画像が引き伸ばされないように「いい感じ」に切り抜く */
+    width: 31.7%;             
+    aspect-ratio: 1 / 1;  
+    object-fit: cover;   
 }
 
 .section3-left-right{
     display: flex;
-    /* gap: 255px; */
-    justify-content: space-between; /* これ！ */
-    align-items: center;            /* 上下中央も合わせると綺麗 */
+    justify-content: space-between;
+    align-items: center;       
 }
 
 .day{
-    flex: 1; /* これを追加！空いているスペースを全部使う設定 */
+    flex: 1; 
 }
 
 
 
 .section3-mini-title{
    display: flex;
-    align-items: center;     /* 上下方向の真ん中に揃える（高さが違う時便利） */
-    gap: 30px;              /* 間隔を30pxあける */
+    align-items: center;    
+    gap: 30px;              
     margin-bottom: -30px;
 }
 
@@ -56,7 +55,7 @@ width: 403px;         /* 好きなサイズを指定 */
 
 .member{
    display: flex;
-  align-items: baseline; /* 文字の底（ベースライン）で揃える */
+  align-items: baseline;
    gap: 11px; 
 }
 
@@ -67,9 +66,8 @@ width: 403px;         /* 好きなサイズを指定 */
 }
 
 .chohoke-image{
-   width: 600px;        /* 好きな数字 px */
-    height: 430px;       /* 横と同じ数字にすれば正方形 */
-    object-fit: cover;
+   width: auto;        
+    height: 400px;      
  
 }
 
@@ -80,8 +78,8 @@ width: 403px;         /* 好きなサイズを指定 */
 }
 
 .color-enji {
-    color: #A93B3E; /* 早稲田祭カラーっぽいエンジ色 */
-    font-weight: bold; /* ついでに太字にするともっと目立ちます！ */
+    color: #A93B3E; 
+    font-weight: bold; 
 }
 
 .image4{
@@ -91,29 +89,125 @@ width: 403px;         /* 好きなサイズを指定 */
 .square-image4{
     display: none;
 }
-
-#section2 div#main-title {
-    /* 1. 文字サイズを小さく（例: 14px） */
-    font-size: 14px !important;
-    
-    /* 2. 文字の間隔を狭く（マイナス値を指定してギュッと詰める） */
-    letter-spacing: -0.1em !important;
-    
-    /* 3. もし縦書きなら、念のため明示 */
-    writing-mode: vertical-rl;
-    
-    /* 余計な余白を消す */
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 .section3-sp-vector{
     display: none;
 }
 .section3-pc-vector{
     display: block;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+.eee {
+ margin-top: 200px;
+}   
+.image3{
+  display: none;
+}
 
+.square-image{
+display: none;
+}
+
+.image4 {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 250px;
+        margin-top: 40px;
+        overflow: hidden;
+        margin-bottom: 60px !important;
+    }
+
+    .square-image4 {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        animation: sp-fade-slider 9s infinite;
+    }
+
+    /* --- ここが重要！各.image4の中での順番を指定 --- */
+    /* 1枚目 */
+    .image4 img:nth-child(1) {
+        animation-delay: 0s;
+    }
+    /* 2枚目 */
+    .image4 img:nth-child(2) {
+        animation-delay: 3s;
+    }
+    /* 3枚目 */
+    .image4 img:nth-child(3) {
+        animation-delay: 6s;
+    }
+
+    /* アニメーションの内容（変更なし） */
+    @keyframes sp-fade-slider {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        33% { opacity: 1; }
+        43% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    .day{
+    flex: 1; 
+}
+
+.section3-left{
+     display: flex;          
+    flex-direction: column; 
+    gap: -60px;
+}
+.section3-left-right{
+    display: flex;          
+    flex-direction: column; 
+}
+
+
+.section3-mini-title{
+   display: flex;
+    align-items: center;     
+    gap: 16px;             
+    margin-bottom: -30px;
+}
+
+.member{
+    margin-top: 17px;
+}
+
+.section3-title-honbun{
+   margin-bottom: 17px;
+}
+
+.section3-mini-title-text{
+   font-size: 18px;
+}
+
+.section3-mini-title-bottom{
+     display: flex;          
+    flex-direction: column; 
+    gap: 14px;
+}
+
+.sixfive{
+   font-size: 25px;
+   font-weight: medium;
+   color: #1b1c1c;
+   margin-right: 6px;
+}
+
+.chohoke-image{
+  width: 100%;
+ height: auto;
+    object-fit: cover;
+   margin-top: 40px;
+   margin-bottom: 60px !important;
+}
+
+    
+}
 @media (max-width: 500px) {
 
     .eee {
