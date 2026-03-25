@@ -385,7 +385,7 @@ font-size: 24px;
         display: none;
     }
     .one-year-box {
-    height: 6166px;
+    height: fit-content;
     width: 350px;
     }
     .start {
@@ -643,5 +643,8 @@ font-size: 24px;
 @media (max-width:500px) {
     footer {
         margin-top: -280px;
+    }
+    .one-year-box {
+        margin-top: 85px !important;
     }
 }
