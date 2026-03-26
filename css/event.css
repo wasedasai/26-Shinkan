@@ -557,7 +557,16 @@ a {
  display: none;
 }
 
+.image-wrapper2{
+  display: flex;
+ justify-content: center; /* 横中央 */
+  margin-top: 110px; /* タイトルとの余白調整 */
+}
 
+#section3 .image-wrapper2 img {
+ max-width: 60%;  /* 画面内に収まる */
+ height: auto;
+}
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
    .sp-only {
@@ -1335,6 +1344,20 @@ a {
 
 
     #section2 .image-wrapper img {
+    max-width: 100%;  /* 画面内に収まる */
+    height: auto;
+    }
+
+    /* section2全体で画像を中央に */
+    #section3 .image-wrapper2 {
+    display: flex;
+    justify-content: center; /* 横中央 */
+    /* align-items: center; もし縦中央にしたい場合 */
+    margin-top: 80px; /* タイトルとの余白調整 */
+    }
+
+
+    #section3 .image-wrapper2 img {
     max-width: 100%;  /* 画面内に収まる */
     height: auto;
     }
