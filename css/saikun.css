@@ -11,7 +11,7 @@
 .profile-right svg {
     width: 100%;
     height: auto;
-    max-width: 1050px; 
+    max-width: 900px; 
     display: block;
     margin: 0 auto;
 }
@@ -48,6 +48,7 @@
 }
 .fukidashi{
   margin-left: 150px;
+  margin-right: -70px;
   display: block;
 }
 .sns-sai{
@@ -78,12 +79,66 @@
 .text-pc {
     display: block;
 }
+@media screen and (max-width: 1024px) and (orientation: portrait){
+   .hunds-up-saikun{
+display: none;
+}
+.profile-right svg {
+        width: 80vw !important;    
+        max-width: none !important; 
+        height: auto !important;
+        margin-left: 45% !important;
+        transform: translateX(-50%) !important;
+        margin-right: -30px;
+    }
+    .profile-right {
+        width: 100%;
+        overflow: hidden; 
+        padding: 0 !important; 
+        margin-top: 50px;
+    }
+.honbun{
+    font-size: 14px;
+    color: #1b1c1c;
+    letter-spacing: 2%;    
+ line-height: 26px; 
+}
+.fukidashi{
+  display: none;
+}
+.fukidashi-sp{
+    display: block;
+    margin-top: 60px;
+}
+.sns-sai{
+    width: 300px;
+    height: auto;
+    margin-right: -190px;
+    margin-top: -50px;
+}
+.sns{
+    display: flex;
+    flex-direction: column;
+}
+.link-text {
+    fill: #A93B3E !important;
+    text-decoration: underline;
+    text-decoration-thickness: 6.5%; 
+    text-underline-offset: 19%;   
+}
+.text-pc {
+        display: none; /* PC用を隠す */
+    }
+.text-sp {
+        display: block; /* スマホ用を出す */
+}    
+}
 @media (max-width: 500px) {
     .hunds-up-saikun{
 display: none;
 }
 .profile-right svg {
-        width: 120vw !important;    
+        width: 115vw !important;    
         max-width: none !important; 
         height: auto !important;
         margin-left: 50% !important;
