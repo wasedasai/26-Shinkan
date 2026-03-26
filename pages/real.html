@@ -111,7 +111,7 @@
 
     <div class="hero">
         <!-- 下の二つ変更、数字は全角にして -->
-        <img src="../images/one-year-head.JPG" alt="">
+        <img src="../images/real/real-mmaji.png" alt="">
         <h1>運スタのリアル</h1>
     </div>
     <div class="main-wrapper">
@@ -167,7 +167,7 @@
                                     <img src="../images/real/vector-red.png">男女比
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-gender.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/gender.svg" alt="男女比グラフ" class="chart-image">
                                 </div>
                             </div>
                             <div class="chart-item">
@@ -175,7 +175,7 @@
                                     <img src="../images/real/vector-green.png">入学について
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-enter.svg" alt="入学について" class="chart-image">
+                                    <img src="../images/real/enter-maji.svg" alt="入学について" class="chart-image">
                                 </div>
                             </div>
                         </div>
@@ -185,7 +185,7 @@
                                     <img src="../images/real/vector-purple.png">学部
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-faculty.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/faculty-maji.svg" alt="男女比グラフ" class="chart-image2">
                                 </div>
                             </div>
                              <div class="supplement-text">
@@ -193,15 +193,14 @@
                                 理工キャンパスや所沢キャンパスの学生もいます！
                                 <span class="bracket-right"></span>
                              </div>
-                    </div>  
-                        </div>
+                        </div>  
                         <div class="chart2"> 
                             <div class="chart-item">
                                 <div class="chart-title">
                                     <img src="../images/real/vector-red.png">出身
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-from.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/from-maji.svg" alt="男女比グラフ" class="chart-image2">
                                 </div>
                             </div> 
                             <div class="supplement-text">
@@ -216,7 +215,7 @@
                                     <img src="../images/real/vector-green.png">GPA
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-gpa.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/gpa-majinomaji.svg" alt="男女比グラフ" class="chart-image2">
                                 </div>
                             </div> 
                             <div class="supplement-text">
@@ -231,7 +230,7 @@
                                     <img src="../images/real/vector-purple.png">兼サー
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-kensa.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/kensa-maji.svg" alt="男女比グラフ" class="chart-image">
                                 </div>
                             </div>
                             <div class="chart-item">
@@ -239,7 +238,7 @@
                                     <img src="../images/real/vector-red.png">バイト
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-baito.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/baito-maji.svg" alt="男女比グラフ" class="chart-image">
                                 </div>
                             </div>
                         </div>
@@ -249,7 +248,7 @@
                                     <img src="../images/real/vector-green.png">通学所要時間
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-commute.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/commute-maji.svg" alt="男女比グラフ" class="chart-image">
                                 </div>
                             </div>
                             <div class="chart-item">
@@ -257,7 +256,7 @@
                                     <img src="../images/real/vector-purple.png">留学
                                 </div>
                                 <div class="circle-wrapper hover-animation">
-                                    <img src="../images/real/chart-abroad.svg" alt="男女比グラフ" class="chart-image">
+                                    <img src="../images/real/abroad-maji.svg" alt="男女比グラフ" class="chart-image">
                                 </div>
                             </div>
                         </div>
@@ -283,7 +282,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="eee"></div>
+                <div class="eee">
+                   <div class="diamond-item" onclick="openModal('interview1')">
+                        <div class="diamond-wrapper">
+                            <img src="../images/real/yarigai-vector.svg" class="diamond-image">
+                            <div class="diamond-text">
+                                運スタでやりがいを<br>感じるときは？
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modalOverlay" class="modal-overlay">
+                        <div class="modal-close" onclick="closeModal()">×</div>
+                        
+                        <div id="modalCard" class="modal-card">
+                            <div class="modal-inner-content">
+                                <h2 class="modal-title">運スタでやりがいを感じるとき</h2>
+                                <div class="modal-main-visual">
+                                    <img src="../images/real/interview-photo1.jpg" alt="活動の様子">
+                                    
+                                    <div class="bubble-tag tag-top-left">早稲田祭当日に規模の大きさを実感した時</div>
+                                    <div class="bubble-tag tag-right-mid">来場者や後輩が楽しそうにしている時</div>
+                                    <div class="bubble-tag tag-left-mid">企画が成功した瞬間</div>
+                                    <div class="bubble-tag tag-bottom-left">早稲田祭を終えた瞬間の景色</div>
+                                    <div class="bubble-tag tag-bottom-right">来場者の笑顔をみた時</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
@@ -338,6 +365,7 @@
         </footer>
 
     <script src="../js/comp.js"></script>
+    <script src="../js/real.js"></script>
 </body>
 </html>
 
