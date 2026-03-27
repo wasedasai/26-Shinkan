@@ -86,7 +86,7 @@
     border-color: #A3CE6B;
 }
 #section2{
- height: 1250px;
+ height: 1570px;
 }
 
 .interview-canvas {
@@ -175,7 +175,7 @@
     overflow: hidden;
 }
 
-/* 表示された時（3枚目の状態） */
+
 .modal-overlay.active .modal-card {
     width: 90%;
     max-width: 800px;
@@ -188,10 +188,10 @@
     padding: 40px;
 }
 
-/* 内部コンテンツの表示タイミング */
+
 .modal-inner-content {
     opacity: 0;
-    transition: opacity 0.3s 0.5s; /* カードが広がった後にふわっと出す */
+    transition: opacity 0.3s 0.5s;
     width: 100%;
 }
 
@@ -199,7 +199,6 @@
     opacity: 1;
 }
 
-/* 吹き出しタグ（3枚目のデザイン） */
 .bubble-tag {
     position: absolute;
     background: #fffcfc;
@@ -210,7 +209,6 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* 閉じるボタン */
 .modal-close {
     position: absolute;
     top: 20px; right: 20px;
@@ -223,10 +221,9 @@
     margin-bottom: 35px;
 }
 
-/* 内部コンテンツ（画像やタグ） */
 .modal-inner-content {
     opacity: 0;
-    transition: opacity 0.3s 0.4s; /* カードが広がった後に表示 */
+    transition: opacity 0.3s 0.4s; 
     width: 90%;
     text-align: center;
 }
@@ -239,17 +236,17 @@
     position: relative;
     width: 100%;
     max-width: 1100px;
-    height: 2000px; /* 全体の高さ */
+    height: 2000px;
     margin: 0 auto;
 }
 
-/* --- タイトル枠（追加） --- */
+
 .framed-text {
     position: absolute;
     top: 20px;
     left: 50px;
     display: inline-block;
-    border: 6px solid #A93B3E; /* 赤い太枠 */
+    border: 6px solid #A93B3E; 
     padding: 15px 40px;
     background-color: #fffcfc;
     color: #1c1b1b;
@@ -258,9 +255,6 @@
     z-index: 10;
 }
 
-/* --- 個別の位置指定（追加） --- */
-
-/* 1つ目：左上の「やりがい」 */
 .pos-left-top {
     top: 250px;
     left: 50px;
@@ -292,15 +286,23 @@
      width: 200px;
 }
 .image-vector{
-    width: 70%;
+    width: 65%;
 }
 .mini-vector {
     position: absolute;
 }
+.pos-left-bottom-bottom{
+    top: -520px;
+    left: 40px;
+    width: 470px;
+}
+.pos-right-bottom-bottom{
+    top: -370px;
+    left: 700px;
+    width: 470px;
+}
 
 
-
-/* --- モーダル内の画像とタグの配置（追加） --- */
 .modal-main-visual {
     position: relative;
     display: inline-block;
@@ -314,23 +316,267 @@
 }
 
 
-/* タグの位置をそれぞれずらす設定 */
-.tag-pos-0 { top: -10px; left: -10px; }
-.tag-pos-1 { top: 20px; right: -20px; }
-.tag-pos-2 { bottom: 30px; left: -30px; }
-/* ...必要に応じて増やす */
+.tag-pos-0 { top: -10px; left: -20px; }
+.tag-pos-1 { top: 20%; right: -50px; }
+.tag-pos-2 { bottom: 40%; left: -60px; }
+.tag-pos-3 { bottom: -30px; right: -100px; }
+.tag-pos-4 { bottom: 43px; left: -90px; }
 
 .modal-main-visual {
-    position: relative; /* 吹き出しの基準にする */
+    position: relative; 
     display: inline-block;
 }
-/* --- iPad・タブレット用 (1194px以下) --- */
-@media screen and (max-width: 1194px) {
-    .chart-container { gap: 40px; }
-    .chart-item { width: 260px; }
-    .circle-wrapper { width: 250px; height: 250px; }
-    .chart-title { font-size: 20px; }
-    
-    /* iPadではホバーの動きを少し控えめに */
-    .circle-wrapper:hover { transform: scale(1.03); }
+
+@media screen and (max-width: 1024px) and (orientation: portrait){
+
+    .eee {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;   
+        padding-top: 60px;
+    }
+     .mini-vector, .pos-right-bottom, .pos-left-center {
+        display: none;
+    }
+
+
+    .diamond-item, .pos-left-top, .pos-right-center, .pos-right-bottom-bottom {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 80% !important;
+        max-width: 400px; 
+        margin: 0 auto -25px !important; 
+        transform: none !important;
+    }
+
+    /* ベクター画像（写真）の調整 */
+    .pos-left-bottom {
+        position: relative !important;
+        top: 40px !important;
+        left: 0 !important;
+        width: 90% !important;
+        margin: 0 auto 35px !important;
+    }
+    .image-vector { width: 100%; }
+
+  .modal-main-visual {
+        display: block;       
+        width: 100%;          
+        max-width: 100%;      
+        margin: 0 auto;       
+        padding: 0;           
+    }
+
+    /* 2. 写真の設定 */
+    .modal-main-visual img {
+        width: 100%;          
+        height: auto;
+        display: block;       /* 下の隙間を消す */
+        margin: 0 auto 15px; 
+        border: 2px solid #A93B3E; /* 写真自体の枠線 */
+        box-sizing: border-box; 
+    }
+
+    /* 3. タグの設定（ここが本番！） */
+    .bubble-tag {
+        position: relative !important; /* 絶対配置を解除してリスト化 */
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important; 
+        box-sizing: border-box; 
+        margin: 8px 0 !important; 
+        padding: 10px 15px !important;
+        display: block;       
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: normal; 
+        text-align: left;    
+        background: #fffcfc;
+        border: 2px solid #A93B3E;
+        border-radius: 30px;
+    }
+.modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+
+    .chart-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+       
+        margin-left: 0 !important;  
+        margin-right: 0 !important;
+        width: 100%;                
+        padding: 0 20px;            
+    }
+
+
+    .chart-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .chart1, .chart2 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;                   /* 縦並びの時の隙間 */
+        width: 100%;
+    }
+
+
+    /* タイトルの左にある謎の空白も消す */
+    .chart-title {
+        margin-left: 0;
+        justify-content: center;    
+        font-size: 24px;            
+    }
+    .supplement-text{
+            position: relative;
+            margin-top: 5px;
+            padding: 7px 10px;
+            font-size: 14px;
+            color: #1c1b1b;
+            display: inline-block;
+    }
+    .bracket-left, .bracket-right {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-color: #be86b9; /* 学部と同じ紫 */
+    border-style: solid;
+}
+.bracket-left2, .bracket-left3, .bracket-right2, .bracket-right3{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-style: solid;
+}
+.bracket-left, .bracket-left2, .bracket-left3 {
+    top: 0;
+    left: 0;
+    border-width: 3px 0 0 3px; /* 左、上、下 */
+}
+
+
+.bracket-right, .bracket-right2, .bracket-right3 {
+    top: 20px;
+    right: 0;
+    border-width: 0 3px 3px 0; /* 右、上、下 */
+}
+.bracket-left2, .bracket-right2{
+    border-color: #A93B3E;
+}
+.bracket-left3, .bracket-right3{
+    border-color: #A3CE6B;
+}
+
+
+    .framed-text {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        font-size: 16px;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+     #section2 {
+        height: 1630px !important; 
+        padding-bottom: 100px;
+    }
+
+    /* iPadだけで少し左右に散らしたい場合はここをいじる */
+    .pos-left-top, .pos-right-center {
+        transform: translateX(-70px) !important;
+    }
+    .pos-right-top {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 40% !important;
+        max-width: 400px; 
+        margin: 0 120px -20px !important; 
+        transform: none !important;
+
+    }
+    .pos-right-top, .pos-right-bottom-bottom {
+        transform: translateX(40px) !important;
+    }
+    .pos-left-bottom{
+           position: relative !important;
+        top: 40px !important;
+        left: 0 !important;
+        width: 80% !important;
+        margin: 0 auto 35px !important;
+    }
+    .pos-left-bottom-bottom{
+        transform: translateX(-40px) !important;
+    }
+    .diamond-text { font-size: 18px; }
+    .diamond-text2 {
+        left: 50% !important;
+        transform: translate(20%, -50%) !important;
+        white-space: normal;
+    }
+}
+@media screen and (max-width: 768px) {
+         #section2 {
+        height: 1300px !important; 
+        padding-bottom: 100px;
+    }
+    .diamond-item {
+        max-width: 300px; 
+    }
+    .pos-left-top, .pos-right-center {
+        transform: translateX(-30px) !important;
+    }
+    .pos-right-top, .pos-right-bottom-bottom {
+        transform: translateX(15px) !important;
+    }
+    .pos-right-top{
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 45% !important;
+        max-width: 400px; 
+        margin: 0 auto -25px !important; 
+        transform: none !important;
+         transform: translateX(-10px) !important;
+    }
+    .pos-right-bottom-bottom{
+        transform: translateX(37px) !important;
+    }
+     .pos-left-bottom-bottom{
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 80% !important;
+        max-width: 400px; 
+        margin: 0 auto 0 !important; 
+        transform: none !important; 
+        transform: translateX(-30px) !important;
+
+    }
+    .diamond-text, .diamond-text2 {
+        font-size: 14px;
+        width: 85%;
+    }
+    .diamond-text2 {
+        left: 50% !important;
+        transform: translate(15%, -40%) !important;
+        white-space: normal;
+    }
 }
