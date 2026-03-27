@@ -2,6 +2,7 @@
 .chart-container {
     font-family: "Noto Sans JP", sans-serif; 
     margin-left: 100px;
+    color: #1c1b1b;
 }
 .chart-item {
     display: flex;
@@ -84,48 +85,77 @@
 .bracket-left3, .bracket-right3{
     border-color: #A3CE6B;
 }
-/* --- ひし形ボタン（1枚目）のスタイル --- */
-.diamond-item {
+#section2{
+ height: 1250px;
+}
+
+.interview-canvas {
     position: relative;
-    width: 300px;
+    width: 100%;
+    max-width: 1200px;
+    height: 900px; /* 全体の高さを確保 */
+    margin: 0 auto;
+}
+.diamond-item{
+    position: relative;
+    width: 500px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
-.diamond-item:hover {
+.diamond-item2{
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.diamond-item:hover, .diamond-item2:hover {
     transform: scale(1.05); /* 触れた時に少し大きく（ぽわん） */
 }
 
-.diamond-wrapper {
+.diamond-wrapper{
     position: relative;
     width: 100%;
 }
-
 .diamond-image {
     width: 100%;
     height: auto;
     display: block;
 }
-
+.diamond-image2{
+    width: 170%;
+    height: auto;
+    display: block;    
+}
 .diamond-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #fffcfc;
     text-align: center;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 20px;
     width: 80%; /* はみ出し防止 */
     pointer-events: none;
 }
-
+.diamond-text2{
+    position: absolute;
+    top: 50%;
+    left: 105%;
+    transform: translate(-50%, -50%);
+    color: #fffcfc;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    width: 80%; /* はみ出し防止 */
+    pointer-events: none;
+    white-space: nowrap;
+}
 /* --- モーダル（変形アニメーション） --- */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(255, 240, 240, 0.95);
+    background: #FDEAE9;
     display: none;
     z-index: 9999;
     justify-content: center;
@@ -133,9 +163,9 @@
 }
 
 .modal-card {
-    width: 200px; /* 最初は小さく */
+    width: 200px;
     height: 200px;
-    background: #A93B3E; /* 2枚目の赤いひし形の色 */
+    background: #A93B3E; 
     transform: rotate(45deg); /* ひし形からスタート */
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
@@ -149,10 +179,10 @@
 .modal-overlay.active .modal-card {
     width: 90%;
     max-width: 800px;
-    height: auto;
+    height: 70%;
     min-height: 500px;
     transform: rotate(0deg); /* 正方形に戻る */
-    background: white;
+    background: #fffcfc;
     border: 6px solid #A93B3E;
     opacity: 1;
     padding: 40px;
@@ -172,11 +202,11 @@
 /* 吹き出しタグ（3枚目のデザイン） */
 .bubble-tag {
     position: absolute;
-    background: white;
-    border: 2px solid #A93B3E;
+    background: #fffcfc;
+    border: 3px solid #A93B3E;
     border-radius: 30px;
     padding: 8px 15px;
-    font-size: 14px;
+    font-size: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -184,10 +214,14 @@
 .modal-close {
     position: absolute;
     top: 20px; right: 20px;
-    font-size: 30px;
+    font-size: 50px;
     cursor: pointer;
 }
-
+.modal-title{
+    color: #A93B3E;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
 
 /* 内部コンテンツ（画像やタグ） */
 .modal-inner-content {
@@ -201,14 +235,94 @@
     opacity: 1;
 }
 
-/* 吹き出しタグの例 */
-.tag {
+.eee {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 2000px; /* 全体の高さ */
+    margin: 0 auto;
+}
+
+/* --- タイトル枠（追加） --- */
+.framed-text {
     position: absolute;
-    background: white;
+    top: 20px;
+    left: 50px;
+    display: inline-block;
+    border: 6px solid #A93B3E; /* 赤い太枠 */
+    padding: 15px 40px;
+    background-color: #fffcfc;
+    color: #1c1b1b;
+    font-size: 28px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+/* --- 個別の位置指定（追加） --- */
+
+/* 1つ目：左上の「やりがい」 */
+.pos-left-top {
+    top: 250px;
+    left: 50px;
+    width: 470px;
+}
+
+.pos-right-top {
+    top: -200px;
+    left: 590px;
+    width: 290px;
+}
+.pos-left-center {
+    top: 480px;
+    left: 430px;
+    width: 200px;
+}
+.pos-right-center{
+    top:-130px;
+    left: 600px;
+    width: 470px;
+}
+.pos-left-bottom{
+    top:-210px;
+    left: 45px;
+}
+.pos-right-bottom{
+    top: 770px;
+    left: 940px;
+     width: 200px;
+}
+.image-vector{
+    width: 70%;
+}
+.mini-vector {
+    position: absolute;
+}
+
+
+
+/* --- モーダル内の画像とタグの配置（追加） --- */
+.modal-main-visual {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.modal-main-visual img {
+    max-width: 100%;
+    height: auto;
     border: 2px solid #A93B3E;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
+}
+
+
+/* タグの位置をそれぞれずらす設定 */
+.tag-pos-0 { top: -10px; left: -10px; }
+.tag-pos-1 { top: 20px; right: -20px; }
+.tag-pos-2 { bottom: 30px; left: -30px; }
+/* ...必要に応じて増やす */
+
+.modal-main-visual {
+    position: relative; /* 吹き出しの基準にする */
+    display: inline-block;
 }
 /* --- iPad・タブレット用 (1194px以下) --- */
 @media screen and (max-width: 1194px) {

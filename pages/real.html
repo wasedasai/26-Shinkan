@@ -159,7 +159,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="eee">
+                
                     <div class="chart-container">
                         <div class="chart1">
                             <div class="chart-item">
@@ -261,10 +261,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
-            <section id="section2" data-title="インタビュー">
-                <div class="sp-title-container">
+           <section id="section2" data-title="インタビュー">
+               <div class="sp-title-container">
                     <div class="sp-title-inner">
                         <div class="title-deco left-deco">
                             <svg width="74" height="53" viewBox="0 0 74 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -281,32 +280,44 @@
                             </svg>
                         </div>
                     </div>
-                </div>
-                <div class="eee">
-                   <div class="diamond-item" onclick="openModal('interview1')">
+               </div>
+                <div class="interview-canvas">
+                    <div class="framed-text">気になる質問をタップ！</div>
+
+                    <div class="diamond-item pos-left-top" onclick="openModal('interview1')">
                         <div class="diamond-wrapper">
                             <img src="../images/real/yarigai-vector.svg" class="diamond-image">
-                            <div class="diamond-text">
-                                運スタでやりがいを<br>感じるときは？
+                            <div class="diamond-text">運スタでやりがいを感じるときは？</div>
+                        </div>
+                    </div>
+                    <div class="diamond-item pos-right-top" onclick="openModal('interview2')">
+                        <div class="diamond-wrapper">
+                            <img src="../images/real/vector-nimai.svg" class="diamond-image2">
+                            <div class="diamond-text2">運スタに入会した理由は？
                             </div>
                         </div>
                     </div>
-
-                    <div id="modalOverlay" class="modal-overlay">
-                        <div class="modal-close" onclick="closeModal()">×</div>
-                        
-                        <div id="modalCard" class="modal-card">
-                            <div class="modal-inner-content">
-                                <h2 class="modal-title">運スタでやりがいを感じるとき</h2>
-                                <div class="modal-main-visual">
-                                    <img src="../images/real/interview-photo1.jpg" alt="活動の様子">
-                                    
-                                    <div class="bubble-tag tag-top-left">早稲田祭当日に規模の大きさを実感した時</div>
-                                    <div class="bubble-tag tag-right-mid">来場者や後輩が楽しそうにしている時</div>
-                                    <div class="bubble-tag tag-left-mid">企画が成功した瞬間</div>
-                                    <div class="bubble-tag tag-bottom-left">早稲田祭を終えた瞬間の景色</div>
-                                    <div class="bubble-tag tag-bottom-right">来場者の笑顔をみた時</div>
-                                </div>
+                    <img src="../images/real/vector-mini.svg" class="mini-vector pos-left-center">
+                    <div class="diamond-item pos-right-center" onclick="openModal('interview3')">
+                        <div class="diamond-wrapper">
+                            <img src="../images/real/yarigai-vector.svg" class="diamond-image">
+                            <div class="diamond-text">運スタの好きなところは？</div>
+                        </div>
+                    </div>
+                    <div class="diamond-item2 pos-left-bottom">
+                        <img src="../images/real/vector-photo.svg" class="image-vector">
+                    </div>
+                    <img src="../images/real/vector-mini.svg" class="mini-vector pos-right-bottom">
+                </div>
+                <div id="modalOverlay" class="modal-overlay">
+                    <div class="modal-close" onclick="closeModal()">×</div>
+                    
+                    <div id="modalCard" class="modal-card">
+                        <div class="modal-inner-content">
+                            <h2 id="modalTitle" class="modal-title">質問タイトル</h2>
+                            <div class="modal-main-visual">
+                                <img id="modalImg" src="" alt="活動の様子">
+                                <div id="modalTagArea"></div>
                             </div>
                         </div>
                     </div>
