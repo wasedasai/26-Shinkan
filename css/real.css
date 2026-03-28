@@ -9,13 +9,28 @@
     flex-direction: column;
     align-items: flex-start; /* タイトルを左寄せ */
 }
-
+.chart-item2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: -50px;
+}
 /* --- タイトルとアイコンの装飾 --- */
 .chart-title {
     font-size: 32px;
     font-weight: 500;
     color: #1c1b1b;
     margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+.chart-title2 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1c1b1b;
+    margin-bottom: -10px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -30,10 +45,6 @@
     align-items: center;
     gap: 50px;
 }
-.circle-wrapper {
-    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-    cursor: pointer;
-}
 
 .chart-image {
     width: 95%;
@@ -43,10 +54,6 @@
     width: 87%;
     height: 87%;    
 }
-.circle-wrapper:hover {
-    transform: scale(1.1);
-}
-
 .supplement-text {
     position: relative;
     margin-top: 40px;
@@ -93,8 +100,9 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 900px; /* 全体の高さを確保 */
-    margin: 0 auto;
+    height: 900px; 
+    margin-top: 200px;
+    margin-left: 120px;
 }
 .diamond-item{
     position: relative;
@@ -108,7 +116,7 @@
     transition: transform 0.3s ease;
 }
 .diamond-item:hover, .diamond-item2:hover {
-    transform: scale(1.05); /* 触れた時に少し大きく（ぽわん） */
+    transform: scale(1.05); 
 }
 
 .diamond-wrapper{
@@ -172,7 +180,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 
@@ -312,15 +319,20 @@
 .modal-main-visual img {
     max-width: 100%;
     height: auto;
-    border: 2px solid #A93B3E;
+    border: 2px solid #A93B3E; 
+    display: block !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    
+    /* もしこれでも出ないなら、画像に余白が必要かも */
+    margin-bottom: 20px !important;
 }
 
 
 .tag-pos-0 { top: -10px; left: -20px; }
 .tag-pos-1 { top: 20%; right: -50px; }
 .tag-pos-2 { bottom: 40%; left: -60px; }
-.tag-pos-3 { bottom: -30px; right: -100px; }
-.tag-pos-4 { bottom: 43px; left: -90px; }
+.tag-pos-3 { bottom: -15px; right: -100px; }
+.tag-pos-4 { bottom: 45px; left: -90px; }
 
 .modal-main-visual {
     position: relative; 
@@ -426,12 +438,10 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 30px;                   /* 縦並びの時の隙間 */
+        gap: 30px;                   
         width: 100%;
     }
 
-
-    /* タイトルの左にある謎の空白も消す */
     .chart-title {
         margin-left: 0;
         justify-content: center;    
@@ -533,9 +543,33 @@
     }
 }
 @media screen and (max-width: 768px) {
+    .interview-canvas{
+        position: relative;
+        width: 100%;
+        margin-right: 70px !important;
+    }
+    .chart-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1c1b1b;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    }
+    .chart-title2 {
+        font-size: 24px;
+        font-weight: 500;
+        color: #1c1b1b;
+        margin-bottom: -2px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 40px;
+    }
          #section2 {
         height: 1300px !important; 
-        padding-bottom: 100px;
     }
     .diamond-item {
         max-width: 300px; 
@@ -568,7 +602,6 @@
         margin: 0 auto 0 !important; 
         transform: none !important; 
         transform: translateX(-30px) !important;
-
     }
     .diamond-text, .diamond-text2 {
         font-size: 14px;
