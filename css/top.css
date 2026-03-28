@@ -467,6 +467,18 @@ h3 {
 .swiper-pagination {
   bottom: 0 !important; 
 }
+.news-data, 
+.news-category, 
+.news-title, 
+.news-title2, 
+.news-title3, 
+.news-title4, 
+.news-title5, 
+.news-title6, 
+.news-link-text {
+    white-space: nowrap; /* 絶対に改行させない */
+    flex-shrink: 0;      /* 狭くなっても潰されないようにする */
+}
 .news {
     max-width: 75vw;
     margin: 10vh auto 15vh auto;
@@ -474,23 +486,35 @@ h3 {
 .news-list {
     list-style: none;
     padding: 0;
-    margin: 50px 0 50px 0;
+    margin: 50px 0 100px 0;
     border-top: 2px solid #1C1B1B;
 }
 .news-item {
     display: flex;
     align-items: center;
-    padding: 24px 80px;
+    padding: 24px 100px;
     border-bottom: 2px solid #1C1B1B;
 }
 .news-data {
-    width: 120px;
-}
-.news-category {
-    width: 140px;
+    margin-right: 30px;
 }
 .news-title {
-    margin: 0 40px 0 0; 
+    margin: 0 185px 0 0; 
+}
+.news-title2 {
+    margin: 0 249px 0 0; 
+}
+.news-title3 {
+    margin: 0 395px 0 0; 
+}
+.news-title4 {
+    margin: 0 60px 0 0; 
+}
+.news-title5 {
+    margin: 0 408px 0 0; 
+}
+.news-title6 {
+    margin: 0 455px 0 0; 
 }
 .news-link-text {
     margin: 0;
@@ -1259,7 +1283,13 @@ footer {
         margin: 40px 0 50px 0;
         font-size: 14px;
     }
+    .flex{
+         display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .news-item {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding: 24px 40px;
