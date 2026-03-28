@@ -51,8 +51,8 @@
     height: 95%;
 }
 .chart-image2{
-    width: 87%;
-    height: 87%;    
+    width: 95%;
+    height: 95%;    
 }
 .supplement-text {
     position: relative;
@@ -158,7 +158,6 @@
     pointer-events: none;
     white-space: nowrap;
 }
-/* --- モーダル（変形アニメーション） --- */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -210,12 +209,11 @@
     position: absolute;
     background: #fffcfc;
     border: 3px solid #A93B3E;
-    border-radius: 30px;
-    padding: 8px 15px;
+    border-radius: 999px;
+    padding: 8px 20px;
     font-size: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
 .modal-close {
     position: absolute;
     top: 20px; right: 20px;
@@ -241,8 +239,6 @@
 
 .eee {
     position: relative;
-    width: 100%;
-    max-width: 1100px;
     height: 2000px;
     margin: 0 auto;
 }
@@ -340,7 +336,8 @@
 }
 
 @media screen and (max-width: 1024px) and (orientation: portrait){
-
+   
+ 
     .eee {
         display: flex;
         flex-direction: column; 
@@ -362,15 +359,7 @@
         transform: none !important;
     }
 
-    /* ベクター画像（写真）の調整 */
-    .pos-left-bottom {
-        position: relative !important;
-        top: 40px !important;
-        left: 0 !important;
-        width: 90% !important;
-        margin: 0 auto 35px !important;
-    }
-    .image-vector { width: 100%; }
+
 
   .modal-main-visual {
         display: block;       
@@ -413,33 +402,23 @@
         right: 15px;
         font-size: 35px;
     }
-
     .chart-container {
         display: flex;
         flex-direction: column;
-        align-items: center;
-       
-       
+        align-items: center !important;
         margin-left: 0 !important;  
-        margin-right: 0 !important;
-        width: 100%;                
+        margin-right: 0 !important;              
         padding: 0 20px;            
     }
-
-
     .chart-item {
-        width: 100%;
         display: flex;
         flex-direction: column;
     }
-
-
     .chart1, .chart2 {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 30px;                   
-        width: 100%;
     }
 
     .chart-title {
@@ -503,6 +482,31 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .interview-canvas {
+    position: relative;
+    height: 900px; 
+    margin-left: 0px;
+}
+    .chart-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1c1b1b;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    }
+    .chart-title2 {
+        font-size: 24px;
+        font-weight: 500;
+        color: #1c1b1b;
+        margin-bottom: -2px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 40px;
+    }
      #section2 {
         height: 1630px !important; 
         padding-bottom: 100px;
@@ -543,11 +547,26 @@
     }
 }
 @media screen and (max-width: 768px) {
-    .interview-canvas{
-        position: relative;
-        width: 100%;
-        margin-right: 70px !important;
-    }
+      .interview-canvas {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 900px;
+}
+    .framed-text {
+    position: absolute;
+    top: -150px;
+    left: -120px;
+    display: inline-block;
+    border: 4px solid #A93B3E; 
+    padding: 10px 20px;
+    background-color: #fffcfc;
+    color: #1c1b1b;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 10;
+}
+
     .chart-title {
     font-size: 24px;
     font-weight: 500;
@@ -569,39 +588,27 @@
         margin-top: 40px;
     }
          #section2 {
-        height: 1300px !important; 
+        height: 1400px !important; 
     }
     .diamond-item {
         max-width: 300px; 
     }
-    .pos-left-top, .pos-right-center {
-        transform: translateX(-30px) !important;
+    .pos-left-top, .pos-right-center,  .pos-left-bottom-bottom {
+        transform: translateX(-155px) !important;
     }
-    .pos-right-top, .pos-right-bottom-bottom {
-        transform: translateX(15px) !important;
+    .pos-right-bottom-bottom {
+        transform: translateX(-90px) !important;
     }
     .pos-right-top{
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        width: 45% !important;
-        max-width: 400px; 
-        margin: 0 auto -25px !important; 
-        transform: none !important;
-         transform: translateX(-10px) !important;
+        width: 45% !important; 
+         transform: translateX(-135px) !important;
     }
-    .pos-right-bottom-bottom{
-        transform: translateX(37px) !important;
-    }
-     .pos-left-bottom-bottom{
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        width: 80% !important;
-        max-width: 400px; 
-        margin: 0 auto 0 !important; 
-        transform: none !important; 
-        transform: translateX(-30px) !important;
+    .pos-left-bottom {
+        top: 26px !important;
+        left: 0 !important;
+        width: 135% !important;
+        margin-bottom: 10px;
+        transform: translateX(-105px) !important;
     }
     .diamond-text, .diamond-text2 {
         font-size: 14px;
