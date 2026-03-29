@@ -463,7 +463,25 @@ html {
  border: 3px solid;
  transition: all 0.3s ease;
 }
-
+.button-2 {
+ display: flex;
+ flex-direction: column; 
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ width: 26vw;
+ height: auto;
+ margin: 3vh auto;
+ padding: .6em 0;
+ background-color: #fffcfc;
+ color: #1C1B1B;
+ font-size: 32px;
+ letter-spacing: 6%;
+ line-height: 33px;
+ border: 3px solid;
+ transition: all 0.3s ease;
+ visibility: hidden;
+}
 
 /* 色バリエーション */
 .button-1.red {
@@ -567,7 +585,10 @@ a {
  max-width: 60%;  /* 画面内に収まる */
  height: auto;
 }
-
+.chushaku{
+  color: #1C1B1B;
+  font-size: 20px;
+}
 @media screen and (max-width: 1024px) and (orientation: portrait) {
    .sp-only {
    display: none;
@@ -888,6 +909,18 @@ a {
         margin: 20px auto;   /* ← 上下余白調整 */
         border-width: 2px;   /* ← 細くすると綺麗 */
         white-space: nowrap;
+ }
+ 
+    .button-2 {
+        width: 80%;          /* ← 画面に対していい感じの幅 */
+        max-width: 300px;   /* ← デカくなりすぎ防止 */
+        font-size: 24px;     /* ← 小さく */
+        line-height: 24px;
+        padding: 0.8em 1em;  /* ← 少し余白 */
+        margin: 20px auto;   /* ← 上下余白調整 */
+        border-width: 2px;   /* ← 細くすると綺麗 */
+        white-space: nowrap;
+        visibility: hidden;
  }
 
      .event-detail.purple .bottom-left {
@@ -1309,6 +1342,16 @@ a {
         margin: 20px auto;   /* ← 上下余白調整 */
         border-width: 2px;   /* ← 細くすると綺麗 */
  }
+ .button-2{
+         width: 80%;          /* ← 画面に対していい感じの幅 */
+        max-width: 220px;   /* ← デカくなりすぎ防止 */
+        font-size: 16px;     /* ← 小さく */
+        line-height: 24px;
+        padding: 0.8em 1em;  /* ← 少し余白 */
+        margin: 20px auto;   /* ← 上下余白調整 */
+        border-width: 2px;   /* ← 細くすると綺麗 */
+        visibility: hidden;
+ }
 
      .event-detail.purple .bottom-left {
     transform: scale(0.8);
@@ -1360,5 +1403,10 @@ a {
     #section3 .image-wrapper2 img {
     max-width: 100%;  /* 画面内に収まる */
     height: auto;
+    }
+
+    .chushaku{
+      color: #1C1B1B;
+      font-size: 14px;
     }
 }
