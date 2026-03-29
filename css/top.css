@@ -486,18 +486,18 @@ h3 {
 .news-list {
     list-style: none;
     padding: 0;
-    margin: 50px 0 100px 0;
+    margin: 40px 0 100px 0;
     border-top: 2px solid #1C1B1B;
 }
 .news-item {
     display: flex;
     align-items: center;
-    padding: 24px 100px;
+    padding: 24px 45px;
     border-bottom: 2px solid #1C1B1B;
 }
-.news-data {
-    margin-right: 30px;
-}
+/* .news-data {
+    margin-right: 30x;
+} */
 /* .news-title {
     margin: 0 185px 0 0; 
 }
@@ -526,7 +526,7 @@ h3 {
 }
 .flex-news {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 .news-item .flex {
