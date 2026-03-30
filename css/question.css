@@ -64,14 +64,17 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  gap: 40px;
 }
 
 /* テキスト */
 .contact-text {
   width: 55%;
-  font-size: 18px;
-  line-height: 2;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    line-height: 33px;
   color: #1c1b1b;
+  flex: 1; 
 }
 
 .contact-text a {
@@ -89,22 +92,17 @@
   text-align: right;
 }
 
-.contact-image img {
-  width: 100%;
-  max-width: 350px;
-  transform: scaleX(-1)
-}
-
 .saikun-wrap {
   position: relative;
-  display: inline-block; /* 画像サイズにフィット */
+  display: inline-block;
+  flex-shrink: 0; /* ←縮まない */
 }
 
 /* 画像 */
 .contact-image img {
+  width: 300px;
   display: block;
-  width: 250px; /* 好きに調整 */
-  margin-left: 10px;
+  transform: scaleX(-1);
 }
 
 /* 共通 */
@@ -116,13 +114,13 @@
 /* 右上（ちょい外に出す） */
 .diamond-top {
   top: -10px;
-  right: 0px;
+  right: -10px;
 }
 
 /* 左下（ちょい外に出す） */
 .diamond-bottom {
   bottom: -30px;
-  left: 700px;
+  left: -60px;
 }
 
 .diamond-top svg {
@@ -133,4 +131,73 @@
 .diamond-bottom svg {
   width: 120px;
   height: auto;
+}
+
+
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+
+
+
+}
+
+@media (max-width: 500px) {
+  .hero h1{
+    font-size: 22px;
+  }
+
+  .faq-item {
+  border-top: 1px solid #1c1b1b;
+  padding: 10px 0;
+}
+
+  .faq-item p{
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+}
+
+  .contact-inner {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .contact-text {
+  width: 90%;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 26px;
+  color: #1c1b1b;
+}
+
+  .contact-right {
+    margin-top: 30px;
+  }
+
+  .contact-image img {
+    width: 150px;
+  }
+
+  .contact-image{
+    margin-left: 50vw;
+    margin-top: -30px;
+  }
+
+  /* SVG消す（そのままでOK） */
+  .diamond-sp {
+    display: none;
+  }
+  .answer {
+  padding-left: 1.2em;
+  text-indent: -1.4em;
+}
+.question {
+  padding-left: 1.2em;
+  text-indent: -1.5em;
+}
+.contact {
+  padding: 20px 20px;
+}
+
 }
