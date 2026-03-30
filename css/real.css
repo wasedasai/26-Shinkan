@@ -60,6 +60,7 @@
     font-size: 20px;
     color: #1c1b1b;
     display: inline-block;
+    text-align: center;
 }
 .bracket-left, .bracket-right {
     position: absolute;
