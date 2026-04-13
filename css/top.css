@@ -1111,6 +1111,7 @@ footer {
     }
     .open-menu-container .flex {
     flex-direction: column;
+    align-items: center;
     }
     .menu-right {
         gap: 25px;
