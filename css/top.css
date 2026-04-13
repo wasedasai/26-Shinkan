@@ -259,9 +259,27 @@ h1 {
     text-align: center;
     letter-spacing: 0.16em !important;
     padding-left: 0.16em;
-    border-bottom: 3px solid #A93B3E;
-    padding-bottom: 3px;
+    /* border-bottom: 3px solid #A93B3E;  ←これは消します */
+    padding-bottom: 6px; /* 線との隙間を少し調整 */
     font-weight: normal;
+    position: relative; /* 線の基準にする */
+}
+
+/* 動く線の「種」を作る */
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* 最初は幅ゼロ */
+    height: 3px; /* 元のborderと同じ太さ */
+    background-color: #A93B3E; /* 元のborderと同じ色 */
+    transition: width 0.5s ease-out; /* 伸びるスピード（お好みで） */
+}
+
+/* スクロールして画面に入った時（JSでクラスがついた時）の動き */
+h1.is-active::after {
+    width: 100%;
 }
 h2 {
     font-weight: normal;
@@ -1058,6 +1076,9 @@ footer {
         font-size: 22px;
         text-underline-offset: 7px;
     }
+    h1::after {
+    height: 2px; /* 元のborderと同じ太さ */
+}
     header {
         width: 100%;
         height: 72px;

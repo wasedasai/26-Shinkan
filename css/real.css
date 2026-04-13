@@ -13,18 +13,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
-    gap: -50px;
+   
 }
 /* --- タイトルとアイコンの装飾 --- */
 .chart-title {
     font-size: 32px;
     font-weight: 500;
     color: #1c1b1b;
-    margin-bottom: 22px;
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-top: 40px;
+    margin-top: 90px;
 }
 .chart-title2 {
     font-size: 32px;
@@ -38,7 +37,7 @@
 }
 .chart1{
     display: flex;
-    gap: 130px;
+    gap: 200px;
 }
 .chart2{
     display: flex;
@@ -61,6 +60,7 @@
     font-size: 20px;
     color: #1c1b1b;
     display: inline-block;
+    text-align: center;
 }
 .bracket-left, .bracket-right {
     position: absolute;
@@ -335,7 +335,17 @@
     display: inline-block;
 }
 
+.sp-br{
+ display: none;
+}
+.chart-image3{
+    margin-top: 32px;
+}
 @media screen and (max-width: 1024px) and (orientation: portrait){
+    .chart-image3{
+    margin-top: 0px;
+}
+
    
  
     .eee {
@@ -407,19 +417,39 @@
         flex-direction: column;
         align-items: center !important;
         margin-left: 0 !important;  
-        margin-right: 0 !important;              
-        padding: 0 20px;            
-    }
-    .chart-item {
-        display: flex;
-        flex-direction: column;
+        margin-right: 0 !important;                        
     }
     .chart1, .chart2 {
+        width: 100% !important;
+        padding: 0 20px; /* 左右に少し余白を作る */
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;                   
+        align-items: center !important;
+        gap: 30px;
+
     }
+   .chart2{
+    position: relative;
+   }
+
+    .chart-item {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* スマホでは中央寄せが見栄えが良いです */
+    }
+
+    .chart-image {
+        width: 100% !important;
+        max-width: 320px; /* スマホで大きすぎないサイズに制限 */
+    }
+
+    .chart-image svg {
+        width: 100% !important; /* これで440pxという固定値を無視して縮みます */
+        height: auto !important;
+    }
+    
 
     .chart-title {
         margin-left: 0;
@@ -429,7 +459,7 @@
     .supplement-text{
             position: relative;
             margin-top: 5px;
-            padding: 7px 10px;
+            padding: 7px 15px;
             font-size: 14px;
             color: #1c1b1b;
             display: inline-block;
@@ -455,7 +485,7 @@
 
 
 .bracket-right, .bracket-right2, .bracket-right3 {
-    top: 20px;
+    top: 35px;
     right: 0;
     border-width: 0 3px 3px 0; /* 右、上、下 */
 }
@@ -482,6 +512,7 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
       .interview-canvas {
     position: relative;
     height: 900px; 
@@ -545,8 +576,23 @@
         transform: translate(20%, -50%) !important;
         white-space: normal;
     }
+    .sp-br{
+        display: block;
+    }
+    .chart-container{
+        width: 100%;
+    }
+    .supplement-text{
+        margin-left: -250px !important;
+    }
 }
 @media screen and (max-width: 768px) {
+        .pc-circle1{
+    display: none;
+}
+.sp-circle1{
+    display: block;
+}
       .interview-canvas {
     position: relative;
     width: 100%;
@@ -618,5 +664,12 @@
         left: 50% !important;
         transform: translate(15%, -40%) !important;
         white-space: normal;
+    }
+
+    .chart-container{
+        width: 100%;
+    }
+      .sp-br{
+        display: block;
     }
 }

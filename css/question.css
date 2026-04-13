@@ -1,0 +1,203 @@
+.faq {
+  max-width: 80%;
+  margin: 10vh auto;
+}
+
+.faq-item {
+  border-top: 1px solid #1c1b1b;
+  padding: 10px 0;
+}
+
+.faq-item p{
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    line-height: 33px;
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid #1c1b1b;
+}
+
+.question {
+  color: #1c1b1b; /* 赤 */
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.question::first-letter {
+  color: #a93b3e; /* A の緑 */
+  font-weight: 500;
+}
+
+.answer {
+  padding-left: 1.5em;
+  text-indent: -1.2em;
+}
+
+.label {
+  color: #a3ce6b;
+  font-weight: 500;
+}
+
+.answer a {
+  color: #a93b3e;
+  text-decoration: underline;
+  text-underline-offset: 0.19em;
+  text-decoration-thickness: 0.065em;
+}
+
+
+
+
+
+.contact {
+  background: #fffcfc;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 40px;
+}
+
+/* テキスト */
+.contact-text {
+  width: 55%;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    line-height: 33px;
+  color: #1c1b1b;
+  flex: 1; 
+}
+
+.contact-text a {
+  color: #a93b3e;
+  text-decoration: underline;
+  text-underline-offset: 0.19em;
+  text-decoration-thickness: 0.065em;
+}
+
+
+
+
+.contact-image {
+  width: 30%;
+  text-align: right;
+}
+
+.saikun-wrap {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0; /* ←縮まない */
+}
+
+/* 画像 */
+.contact-image img {
+  width: 300px;
+  display: block;
+  transform: scaleX(-1);
+}
+
+/* 共通 */
+.diamondoo {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* 右上（ちょい外に出す） */
+.diamond-top {
+  top: -10px;
+  right: -10px;
+}
+
+/* 左下（ちょい外に出す） */
+.diamond-bottom {
+  bottom: -30px;
+  left: -60px;
+}
+
+.diamond-top svg {
+  width: 80px;
+  height: auto;
+}
+
+.diamond-bottom svg {
+  width: 120px;
+  height: auto;
+}
+
+
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+
+
+
+}
+
+@media (max-width: 500px) {
+  .hero h1{
+    font-size: 22px;
+  }
+
+  .faq-item {
+  border-top: 1px solid #1c1b1b;
+  padding: 10px 0;
+}
+
+  .faq-item p{
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 26px;
+}
+
+  .contact-inner {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .contact-text {
+  width: 90%;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 26px;
+  color: #1c1b1b;
+}
+
+  .contact-right {
+    margin-top: 30px;
+  }
+
+  .contact-image img {
+    width: 150px;
+  }
+
+  .contact-image{
+    margin-left: 50vw;
+    margin-top: -30px;
+  }
+
+  /* SVG消す（そのままでOK） */
+  .diamond-sp {
+    display: none;
+  }
+  .answer {
+  padding-left: 1.2em;
+  text-indent: -1.4em;
+}
+.question {
+  padding-left: 1.2em;
+  text-indent: -1.5em;
+}
+.contact {
+  padding: 20px 20px;
+}
+
+}

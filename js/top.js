@@ -118,7 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
             // 要素が見つからなかった場合の安全対策
             clearInterval(loadingInterval);
         }
+                const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 画面に入ったらクラスをつける
+                    entry.target.classList.add('is-active');
+                } else {
+                    // 画面から消えたらクラスを外す（これでリセットされる）
+                    entry.target.classList.remove('is-active');
+                }
+            });
+        }, {
+            threshold: 0.5 
+        });
 
+        document.querySelectorAll('h1').forEach(el => {
+            observer.observe(el);
+        });
         // =========================================================
         // スクロールアニメーション関数
         // =========================================================
